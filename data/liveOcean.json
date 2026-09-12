@@ -1,0 +1,1766 @@
+{
+  "pulledAt": "2026-09-06T05:14:13Z",
+  "note": "Observed temperatures are live Argo from Argovis. predicted currently copies observed because reconstruction models are not trained yet.",
+  "regions": {
+    "arabianSea": {
+      "id": "argo-7901136",
+      "wmo": "7901136",
+      "cycle": 119,
+      "lat": 15.583,
+      "lon": 68.808,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7901136/profiles/R7901136_119.nc",
+      "surfaceTemp": 28.35,
+      "salinity": null,
+      "d20": 141,
+      "d26": 81,
+      "profile": [
+        {
+          "depth": 0,
+          "observed": 28.35,
+          "predicted": 28.35,
+          "error": 0.0
+        },
+        {
+          "depth": 5,
+          "observed": 28.35,
+          "predicted": 28.35,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 28.35,
+          "predicted": 28.35,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 28.34,
+          "predicted": 28.34,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 28.28,
+          "predicted": 28.28,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 28.22,
+          "predicted": 28.22,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 26.98,
+          "predicted": 26.98,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 23.21,
+          "predicted": 23.21,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 20.86,
+          "predicted": 20.86,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 19.51,
+          "predicted": 19.51,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 17.03,
+          "predicted": 17.03,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 14.02,
+          "predicted": 14.02,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 11.97,
+          "predicted": 11.97,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 10.75,
+          "predicted": 10.75,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 8.18,
+          "predicted": 8.18,
+          "error": 0.0
+        }
+      ]
+    },
+    "bayOfBengal": {
+      "id": "argo-2903434",
+      "wmo": "2903434",
+      "cycle": 86,
+      "lat": 13.038,
+      "lon": 87.03,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903434/profiles/R2903434_086.nc",
+      "surfaceTemp": 29.13,
+      "salinity": 3.2,
+      "d20": 111,
+      "d26": 44,
+      "profile": [
+        {
+          "depth": 0,
+          "observed": 29.13,
+          "predicted": 29.13,
+          "error": 0.0
+        },
+        {
+          "depth": 5,
+          "observed": 29.11,
+          "predicted": 29.11,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 29.1,
+          "predicted": 29.1,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 29.04,
+          "predicted": 29.04,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 27.02,
+          "predicted": 27.02,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 25.51,
+          "predicted": 25.51,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 22.0,
+          "predicted": 22.0,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 20.97,
+          "predicted": 20.97,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 18.81,
+          "predicted": 18.81,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 17.91,
+          "predicted": 17.91,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 14.94,
+          "predicted": 14.94,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 11.84,
+          "predicted": 11.84,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 9.96,
+          "predicted": 9.96,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 8.68,
+          "predicted": 8.68,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 6.92,
+          "predicted": 6.92,
+          "error": 0.0
+        }
+      ]
+    },
+    "equatorialIO": {
+      "id": "argo-2902771",
+      "wmo": "2902771",
+      "cycle": 257,
+      "lat": 5.956,
+      "lon": 74.969,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902771/profiles/R2902771_257.nc",
+      "surfaceTemp": 30.17,
+      "salinity": 34.19,
+      "d20": 101,
+      "d26": 63,
+      "profile": [
+        {
+          "depth": 0,
+          "observed": 30.17,
+          "predicted": 30.17,
+          "error": 0.0
+        },
+        {
+          "depth": 5,
+          "observed": 29.35,
+          "predicted": 29.35,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 29.2,
+          "predicted": 29.2,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 29.2,
+          "predicted": 29.2,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 28.97,
+          "predicted": 28.97,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 28.17,
+          "predicted": 28.17,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 23.85,
+          "predicted": 23.85,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 20.09,
+          "predicted": 20.09,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 17.04,
+          "predicted": 17.04,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 15.66,
+          "predicted": 15.66,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 13.53,
+          "predicted": 13.53,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 11.54,
+          "predicted": 11.54,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 10.21,
+          "predicted": 10.21,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 8.95,
+          "predicted": 8.95,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 7.0,
+          "predicted": 7.0,
+          "error": 0.0
+        }
+      ]
+    },
+    "somaliUpwelling": {
+      "id": "argo-2903149",
+      "wmo": "2903149",
+      "cycle": 101,
+      "lat": 9.938,
+      "lon": 57.756,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903149/profiles/R2903149_101.nc",
+      "surfaceTemp": 28.02,
+      "salinity": 36.16,
+      "d20": 191,
+      "d26": 136,
+      "profile": [
+        {
+          "depth": 0,
+          "observed": 28.02,
+          "predicted": 28.02,
+          "error": 0.0
+        },
+        {
+          "depth": 5,
+          "observed": 28.02,
+          "predicted": 28.02,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 28.02,
+          "predicted": 28.02,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 28.03,
+          "predicted": 28.03,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 28.03,
+          "predicted": 28.03,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 28.01,
+          "predicted": 28.01,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 28.0,
+          "predicted": 28.0,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 28.06,
+          "predicted": 28.06,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 27.14,
+          "predicted": 27.14,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 24.57,
+          "predicted": 24.57,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 18.98,
+          "predicted": 18.98,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 14.46,
+          "predicted": 14.46,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 12.44,
+          "predicted": 12.44,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 10.65,
+          "predicted": 10.65,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 8.16,
+          "predicted": 8.16,
+          "error": 0.0
+        }
+      ]
+    },
+    "northernBoB": {
+      "id": "argo-7902073",
+      "wmo": "7902073",
+      "cycle": 40,
+      "lat": 17.761,
+      "lon": 89.271,
+      "lastDate": "2026-08-28",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/7902073/profiles/R7902073_040.nc",
+      "surfaceTemp": 28.58,
+      "salinity": 26.03,
+      "d20": 96,
+      "d26": 53,
+      "profile": [
+        {
+          "depth": 5,
+          "observed": 28.58,
+          "predicted": 28.58,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 28.63,
+          "predicted": 28.63,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 28.96,
+          "predicted": 28.96,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 29.13,
+          "predicted": 29.13,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 26.47,
+          "predicted": 26.47,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 22.81,
+          "predicted": 22.81,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 19.42,
+          "predicted": 19.42,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 16.66,
+          "predicted": 16.66,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 15.28,
+          "predicted": 15.28,
+          "error": 0.0
+        }
+      ]
+    },
+    "laccadive": {
+      "id": "argo-2902771",
+      "wmo": "2902771",
+      "cycle": 257,
+      "lat": 5.956,
+      "lon": 74.969,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902771/profiles/R2902771_257.nc",
+      "surfaceTemp": 30.17,
+      "salinity": 34.19,
+      "d20": 101,
+      "d26": 63,
+      "profile": [
+        {
+          "depth": 0,
+          "observed": 30.17,
+          "predicted": 30.17,
+          "error": 0.0
+        },
+        {
+          "depth": 5,
+          "observed": 29.35,
+          "predicted": 29.35,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 29.2,
+          "predicted": 29.2,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 29.2,
+          "predicted": 29.2,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 28.97,
+          "predicted": 28.97,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 28.17,
+          "predicted": 28.17,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 23.85,
+          "predicted": 23.85,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 20.09,
+          "predicted": 20.09,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 17.04,
+          "predicted": 17.04,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 15.66,
+          "predicted": 15.66,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 13.53,
+          "predicted": 13.53,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 11.54,
+          "predicted": 11.54,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 10.21,
+          "predicted": 10.21,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 8.95,
+          "predicted": 8.95,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 7.0,
+          "predicted": 7.0,
+          "error": 0.0
+        }
+      ]
+    }
+  },
+  "floats": [
+    {
+      "id": "argo-7901136",
+      "wmo": "7901136",
+      "cycle": 119,
+      "lat": 15.583,
+      "lon": 68.808,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7901136/profiles/R7901136_119.nc",
+      "surfaceTemp": 28.35,
+      "salinity": null,
+      "d20": 141,
+      "d26": 81,
+      "profile": [
+        {
+          "depth": 0,
+          "observed": 28.35,
+          "predicted": 28.35,
+          "error": 0.0
+        },
+        {
+          "depth": 5,
+          "observed": 28.35,
+          "predicted": 28.35,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 28.35,
+          "predicted": 28.35,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 28.34,
+          "predicted": 28.34,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 28.28,
+          "predicted": 28.28,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 28.22,
+          "predicted": 28.22,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 26.98,
+          "predicted": 26.98,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 23.21,
+          "predicted": 23.21,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 20.86,
+          "predicted": 20.86,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 19.51,
+          "predicted": 19.51,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 17.03,
+          "predicted": 17.03,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 14.02,
+          "predicted": 14.02,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 11.97,
+          "predicted": 11.97,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 10.75,
+          "predicted": 10.75,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 8.18,
+          "predicted": 8.18,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-2903434",
+      "wmo": "2903434",
+      "cycle": 86,
+      "lat": 13.038,
+      "lon": 87.03,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903434/profiles/R2903434_086.nc",
+      "surfaceTemp": 29.13,
+      "salinity": 3.2,
+      "d20": 111,
+      "d26": 44,
+      "profile": [
+        {
+          "depth": 0,
+          "observed": 29.13,
+          "predicted": 29.13,
+          "error": 0.0
+        },
+        {
+          "depth": 5,
+          "observed": 29.11,
+          "predicted": 29.11,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 29.1,
+          "predicted": 29.1,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 29.04,
+          "predicted": 29.04,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 27.02,
+          "predicted": 27.02,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 25.51,
+          "predicted": 25.51,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 22.0,
+          "predicted": 22.0,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 20.97,
+          "predicted": 20.97,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 18.81,
+          "predicted": 18.81,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 17.91,
+          "predicted": 17.91,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 14.94,
+          "predicted": 14.94,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 11.84,
+          "predicted": 11.84,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 9.96,
+          "predicted": 9.96,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 8.68,
+          "predicted": 8.68,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 6.92,
+          "predicted": 6.92,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-2902771",
+      "wmo": "2902771",
+      "cycle": 257,
+      "lat": 5.956,
+      "lon": 74.969,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902771/profiles/R2902771_257.nc",
+      "surfaceTemp": 30.17,
+      "salinity": 34.19,
+      "d20": 101,
+      "d26": 63,
+      "profile": [
+        {
+          "depth": 0,
+          "observed": 30.17,
+          "predicted": 30.17,
+          "error": 0.0
+        },
+        {
+          "depth": 5,
+          "observed": 29.35,
+          "predicted": 29.35,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 29.2,
+          "predicted": 29.2,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 29.2,
+          "predicted": 29.2,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 28.97,
+          "predicted": 28.97,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 28.17,
+          "predicted": 28.17,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 23.85,
+          "predicted": 23.85,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 20.09,
+          "predicted": 20.09,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 17.04,
+          "predicted": 17.04,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 15.66,
+          "predicted": 15.66,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 13.53,
+          "predicted": 13.53,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 11.54,
+          "predicted": 11.54,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 10.21,
+          "predicted": 10.21,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 8.95,
+          "predicted": 8.95,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 7.0,
+          "predicted": 7.0,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-2903149",
+      "wmo": "2903149",
+      "cycle": 101,
+      "lat": 9.938,
+      "lon": 57.756,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903149/profiles/R2903149_101.nc",
+      "surfaceTemp": 28.02,
+      "salinity": 36.16,
+      "d20": 191,
+      "d26": 136,
+      "profile": [
+        {
+          "depth": 0,
+          "observed": 28.02,
+          "predicted": 28.02,
+          "error": 0.0
+        },
+        {
+          "depth": 5,
+          "observed": 28.02,
+          "predicted": 28.02,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 28.02,
+          "predicted": 28.02,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 28.03,
+          "predicted": 28.03,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 28.03,
+          "predicted": 28.03,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 28.01,
+          "predicted": 28.01,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 28.0,
+          "predicted": 28.0,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 28.06,
+          "predicted": 28.06,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 27.14,
+          "predicted": 27.14,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 24.57,
+          "predicted": 24.57,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 18.98,
+          "predicted": 18.98,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 14.46,
+          "predicted": 14.46,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 12.44,
+          "predicted": 12.44,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 10.65,
+          "predicted": 10.65,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 8.16,
+          "predicted": 8.16,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-7902073",
+      "wmo": "7902073",
+      "cycle": 40,
+      "lat": 17.761,
+      "lon": 89.271,
+      "lastDate": "2026-08-28",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/7902073/profiles/R7902073_040.nc",
+      "surfaceTemp": 28.58,
+      "salinity": 26.03,
+      "d20": 96,
+      "d26": 53,
+      "profile": [
+        {
+          "depth": 5,
+          "observed": 28.58,
+          "predicted": 28.58,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 28.63,
+          "predicted": 28.63,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 28.96,
+          "predicted": 28.96,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 29.13,
+          "predicted": 29.13,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 26.47,
+          "predicted": 26.47,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 22.81,
+          "predicted": 22.81,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 19.42,
+          "predicted": 19.42,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 16.66,
+          "predicted": 16.66,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 15.28,
+          "predicted": 15.28,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-2903956",
+      "wmo": "2903956",
+      "cycle": 267,
+      "lat": 19.491,
+      "lon": 62.137,
+      "lastDate": "2026-09-04",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/2903956/profiles/R2903956_267.nc",
+      "surfaceTemp": 26.6,
+      "salinity": 36.08,
+      "d20": 147,
+      "d26": 40,
+      "profile": [
+        {
+          "depth": 5,
+          "observed": 26.6,
+          "predicted": 26.6,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 26.6,
+          "predicted": 26.6,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 26.58,
+          "predicted": 26.58,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 26.5,
+          "predicted": 26.5,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 25.51,
+          "predicted": 25.51,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 24.87,
+          "predicted": 24.87,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 22.56,
+          "predicted": 22.56,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 20.77,
+          "predicted": 20.77,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 19.88,
+          "predicted": 19.88,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 17.82,
+          "predicted": 17.82,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 16.05,
+          "predicted": 16.05,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 13.28,
+          "predicted": 13.28,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 11.6,
+          "predicted": 11.6,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 9.39,
+          "predicted": 9.39,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-5907141",
+      "wmo": "5907141",
+      "cycle": 250,
+      "lat": 25.411,
+      "lon": 58.415,
+      "lastDate": "2026-09-04",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/5907141/profiles/R5907141_250.nc",
+      "surfaceTemp": 32.02,
+      "salinity": 37.01,
+      "d20": null,
+      "d26": 44,
+      "profile": [
+        {
+          "depth": 5,
+          "observed": 32.02,
+          "predicted": 32.02,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 31.85,
+          "predicted": 31.85,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 31.19,
+          "predicted": 31.19,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 31.11,
+          "predicted": 31.11,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 23.75,
+          "predicted": 23.75,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 22.07,
+          "predicted": 22.07,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 21.79,
+          "predicted": 21.79,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-2903955",
+      "wmo": "2903955",
+      "cycle": 249,
+      "lat": 23.365,
+      "lon": 61.085,
+      "lastDate": "2026-09-04",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/2903955/profiles/R2903955_249.nc",
+      "surfaceTemp": 25.57,
+      "salinity": 36.31,
+      "d20": 184,
+      "d26": null,
+      "profile": [
+        {
+          "depth": 5,
+          "observed": 25.57,
+          "predicted": 25.57,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 25.55,
+          "predicted": 25.55,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 23.96,
+          "predicted": 23.96,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 23.76,
+          "predicted": 23.76,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 23.11,
+          "predicted": 23.11,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 22.37,
+          "predicted": 22.37,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 21.26,
+          "predicted": 21.26,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 21.05,
+          "predicted": 21.05,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 20.6,
+          "predicted": 20.6,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 19.71,
+          "predicted": 19.71,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 15.84,
+          "predicted": 15.84,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 12.87,
+          "predicted": 12.87,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 11.56,
+          "predicted": 11.56,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 9.07,
+          "predicted": 9.07,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-6990700",
+      "wmo": "6990700",
+      "cycle": 70,
+      "lat": 24.174,
+      "lon": 58.234,
+      "lastDate": "2026-09-04",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/6990700/profiles/R6990700_070.nc",
+      "surfaceTemp": 31.77,
+      "salinity": null,
+      "d20": 138,
+      "d26": 37,
+      "profile": [
+        {
+          "depth": 5,
+          "observed": 31.77,
+          "predicted": 31.77,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 31.7,
+          "predicted": 31.7,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 31.4,
+          "predicted": 31.4,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 27.3,
+          "predicted": 27.3,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 23.71,
+          "predicted": 23.71,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 22.58,
+          "predicted": 22.58,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 22.42,
+          "predicted": 22.42,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 21.13,
+          "predicted": 21.13,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 19.02,
+          "predicted": 19.02,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 16.82,
+          "predicted": 16.82,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 15.1,
+          "predicted": 15.1,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 12.76,
+          "predicted": 12.76,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 11.0,
+          "predicted": 11.0,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 8.65,
+          "predicted": 8.65,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-5907326",
+      "wmo": "5907326",
+      "cycle": 1,
+      "lat": 19.785,
+      "lon": 64.955,
+      "lastDate": "2026-09-04",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907326/profiles/R5907326_001.nc",
+      "surfaceTemp": 27.0,
+      "salinity": 36.46,
+      "d20": 382,
+      "d26": 77,
+      "profile": [
+        {
+          "depth": 0,
+          "observed": 27.0,
+          "predicted": 27.0,
+          "error": 0.0
+        },
+        {
+          "depth": 5,
+          "observed": 27.0,
+          "predicted": 27.0,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 27.0,
+          "predicted": 27.0,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 27.0,
+          "predicted": 27.0,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 26.92,
+          "predicted": 26.92,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 26.53,
+          "predicted": 26.53,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 26.04,
+          "predicted": 26.04,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 25.54,
+          "predicted": 25.54,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 25.05,
+          "predicted": 25.05,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 24.56,
+          "predicted": 24.56,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 23.58,
+          "predicted": 23.58,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 21.61,
+          "predicted": 21.61,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 17.68,
+          "predicted": 17.68,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 13.74,
+          "predicted": 13.74,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 8.83,
+          "predicted": 8.83,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-1902594",
+      "wmo": "1902594",
+      "cycle": 125,
+      "lat": 9.112,
+      "lon": 86.795,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/1902594/profiles/R1902594_125.nc",
+      "surfaceTemp": 29.38,
+      "salinity": null,
+      "d20": 139,
+      "d26": 79,
+      "profile": [
+        {
+          "depth": 5,
+          "observed": 29.38,
+          "predicted": 29.38,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 29.39,
+          "predicted": 29.39,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 28.55,
+          "predicted": 28.55,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 27.99,
+          "predicted": 27.99,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 27.79,
+          "predicted": 27.79,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 26.41,
+          "predicted": 26.41,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 24.02,
+          "predicted": 24.02,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 21.69,
+          "predicted": 21.69,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 18.72,
+          "predicted": 18.72,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 14.46,
+          "predicted": 14.46,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 12.09,
+          "predicted": 12.09,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 10.25,
+          "predicted": 10.25,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 8.59,
+          "predicted": 8.59,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 6.55,
+          "predicted": 6.55,
+          "error": 0.0
+        }
+      ]
+    },
+    {
+      "id": "argo-3902754",
+      "wmo": "3902754",
+      "cycle": 24,
+      "lat": 13.321,
+      "lon": 62.4,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/3902754/profiles/R3902754_024.nc",
+      "surfaceTemp": 27.3,
+      "salinity": 36.02,
+      "d20": 183,
+      "d26": 111,
+      "profile": [
+        {
+          "depth": 5,
+          "observed": 27.3,
+          "predicted": 27.3,
+          "error": 0.0
+        },
+        {
+          "depth": 10,
+          "observed": 27.31,
+          "predicted": 27.31,
+          "error": 0.0
+        },
+        {
+          "depth": 20,
+          "observed": 27.31,
+          "predicted": 27.31,
+          "error": 0.0
+        },
+        {
+          "depth": 30,
+          "observed": 27.31,
+          "predicted": 27.31,
+          "error": 0.0
+        },
+        {
+          "depth": 50,
+          "observed": 27.31,
+          "predicted": 27.31,
+          "error": 0.0
+        },
+        {
+          "depth": 75,
+          "observed": 27.32,
+          "predicted": 27.32,
+          "error": 0.0
+        },
+        {
+          "depth": 100,
+          "observed": 27.22,
+          "predicted": 27.22,
+          "error": 0.0
+        },
+        {
+          "depth": 125,
+          "observed": 24.48,
+          "predicted": 24.48,
+          "error": 0.0
+        },
+        {
+          "depth": 150,
+          "observed": 23.05,
+          "predicted": 23.05,
+          "error": 0.0
+        },
+        {
+          "depth": 200,
+          "observed": 18.47,
+          "predicted": 18.47,
+          "error": 0.0
+        },
+        {
+          "depth": 300,
+          "observed": 14.27,
+          "predicted": 14.27,
+          "error": 0.0
+        },
+        {
+          "depth": 500,
+          "observed": 12.05,
+          "predicted": 12.05,
+          "error": 0.0
+        },
+        {
+          "depth": 700,
+          "observed": 10.85,
+          "predicted": 10.85,
+          "error": 0.0
+        },
+        {
+          "depth": 1000,
+          "observed": 8.58,
+          "predicted": 8.58,
+          "error": 0.0
+        }
+      ]
+    }
+  ]
+}

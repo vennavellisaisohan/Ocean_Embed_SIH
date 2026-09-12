@@ -1,0 +1,187 @@
+{
+  "problem": "SIH26066",
+  "organization": "MoES / INCOIS",
+  "pulledAt": "2026-09-06T05:14:13Z",
+  "region": "North Indian Ocean 5\u00b0N\u201330\u00b0N, 45\u00b0E\u2013105\u00b0E",
+  "standardDepthsM": [
+    0,
+    5,
+    10,
+    20,
+    30,
+    50,
+    75,
+    100,
+    125,
+    150,
+    200,
+    300,
+    500,
+    700,
+    1000
+  ],
+  "sihRecommended": [
+    {
+      "variable": "SST",
+      "product": "OSTIA 0.05\u00b0 daily",
+      "doi": "10.48670/moi-00168",
+      "access": "Copernicus Marine (login)"
+    },
+    {
+      "variable": "SSS",
+      "product": "SMAP/SMOS 0.125\u00b0 daily",
+      "doi": "10.48670/moi-00051",
+      "access": "Copernicus Marine (login)"
+    },
+    {
+      "variable": "SSH/SLA",
+      "product": "DUACS 0.25\u00b0 daily",
+      "doi": "10.48670/moi-00145",
+      "access": "Copernicus Marine (login)"
+    },
+    {
+      "variable": "Currents",
+      "product": "OSCAR L4 0.25\u00b0 daily",
+      "url": "https://podaac.jpl.nasa.gov/dataset/OSCAR_L4_OC_FINAL_V2.0",
+      "access": "NASA Earthdata (login)"
+    },
+    {
+      "variable": "Winds",
+      "product": "CCMP L4 V3.1 10 m 6-hourly",
+      "url": "https://podaac.jpl.nasa.gov/dataset/CCMP_WINDS_10M6HR_L4_V3.1",
+      "access": "NASA Earthdata (login)"
+    },
+    {
+      "variable": "Training target",
+      "product": "GLORYS12V1 temperature",
+      "doi": "10.48670/moi-00021",
+      "access": "Copernicus Marine (login)"
+    },
+    {
+      "variable": "Validation",
+      "product": "INCOIS LAS gridded Argo",
+      "url": "https://erddap.incois.gov.in/erddap/"
+    }
+  ],
+  "openLatestPulled": [
+    {
+      "variable": "SST",
+      "product": "NOAA OISST v2.1 0.25\u00b0 daily",
+      "latest": "2026-09-04",
+      "file": "raw/oisst-avhrr-v02r01.20260904_preliminary.nc",
+      "provider": "NCEI",
+      "note": "preliminary NRT; final 2026-08-21 also kept"
+    },
+    {
+      "variable": "SSS",
+      "product": "NOAA CoastWatch SMAP SSS 0.25\u00b0 daily",
+      "latest": "2026-09-04",
+      "file": "raw/sss_smap_nio_latest.csv",
+      "provider": "NOAA NESDIS",
+      "finitePoints": 3855
+    },
+    {
+      "variable": "SLA",
+      "product": "NOAA CoastWatch blended altimetry 0.25\u00b0 daily",
+      "latest": "2026-09-04",
+      "file": "raw/sla_duacs_nio_latest.csv",
+      "provider": "NOAA NESDIS",
+      "finitePoints": 6089
+    },
+    {
+      "variable": "Currents",
+      "product": "NOAA CoastWatch blended geostrophic U/V 0.25\u00b0 daily",
+      "latest": "2026-09-03",
+      "file": "raw/currents_altimetry_nio_latest.csv",
+      "provider": "NOAA NESDIS",
+      "finitePoints": 6096
+    },
+    {
+      "variable": "Winds",
+      "product": "NOAA NCEI blended sea winds 0.25\u00b0 daily",
+      "latest": "2026-07-31",
+      "file": "raw/winds_ncei_nio_latest.csv",
+      "provider": "NOAA NCEI",
+      "finitePoints": 6251
+    },
+    {
+      "variable": "Argo profiles",
+      "product": "Argovis / IFREMER GDAC",
+      "latest": "2026-09-04",
+      "file": "raw/argovis_nio_meta_latest.json",
+      "provider": "University of Colorado Argovis",
+      "profilesInNIO": 104
+    },
+    {
+      "variable": "Gridded Argo",
+      "product": "INCOIS ERDDAP 10-day McCreary OA",
+      "file": "raw/incois_argo_10day_T_nio_latest.csv",
+      "provider": "INCOIS LAS/ERDDAP",
+      "latest": "2026-07-30",
+      "finitePoints": 10489
+    }
+  ],
+  "kaggle": [
+    {
+      "slug": "anantsinghal786/argo-indian-ocean",
+      "note": "Small single-float sample; not basin-scale. No Kaggle API credentials on this machine so it was not downloaded."
+    },
+    {
+      "slug": "samoilovmikhail/ocean-buoys-data-1980-2025",
+      "note": "NOAA NDBC buoys, not subsurface profiles."
+    },
+    {
+      "name": "IEEE DataPort Time Series SSP Data in Indian Ocean",
+      "url": "https://ieee-dataport.org/documents/time-series-ssp-data-indian-ocean",
+      "note": "GDCSM Argo 2004\u20132024 0.5\u00b0 monthly; IEEE login required."
+    }
+  ],
+  "notDownloaded": [
+    {
+      "product": "GLORYS12V1 / OSTIA / DUACS CMEMS",
+      "reason": "Copernicus Marine requires a free account. SIH allows an open substitute; HYCOM/OISST/NOAA altimetry used instead."
+    },
+    {
+      "product": "OSCAR v2 / CCMP from PO.DAAC",
+      "reason": "NASA Earthdata login required. NOAA blended currents and winds used instead."
+    }
+  ],
+  "summaries": {
+    "sst": {
+      "variable": "sst",
+      "points": 3002,
+      "min": 20.77,
+      "max": 35.18,
+      "mean": 28.548
+    },
+    "sss": {
+      "points": 3855,
+      "min": 0.0,
+      "max": 38.966,
+      "mean": 33.914
+    },
+    "sla": {
+      "points": 6089,
+      "min": -0.845,
+      "max": 0.598,
+      "mean": 0.083
+    },
+    "currents": {
+      "points": 6096,
+      "min": -2.376,
+      "max": 2.607,
+      "mean": 0.016
+    },
+    "winds": {
+      "points": 6251,
+      "min": -4.51,
+      "max": 12.222,
+      "mean": 6.025
+    },
+    "argoLiveProfiles": 12,
+    "incoisArgo10day": {
+      "points": 3329,
+      "finiteAllDepths": 10489
+    }
+  }
+}
