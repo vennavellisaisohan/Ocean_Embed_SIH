@@ -7,6 +7,7 @@ const LINKS = [
   { id: 'poc', label: 'Basin' },
   { id: 'explorer', label: 'Column' },
   { id: 'validation', label: 'Argo' },
+  { id: 'cyclones', label: 'Cyclones' },
   { id: 'experiments', label: 'Models' },
   { id: 'impact', label: 'Impact' },
 ]

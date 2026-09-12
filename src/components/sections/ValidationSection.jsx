@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { REAL_ARGO_FLOATS, getRealScatterData, DEPTH_RESOLVED_METRICS } from '../../lib/realOceanData'
+import { REAL_ARGO_FLOATS, getRealScatterData, DEPTH_RESOLVED_METRICS, MODEL_FAILURE, MODEL_METRICS } from '../../lib/realOceanData'
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, LineChart, Line, ReferenceLine, ReferenceArea,
@@ -10,12 +10,8 @@ export default function ValidationSection() {
   const [selected, setSelected] = useState(REAL_ARGO_FLOATS[0])
   const [metric, setMetric] = useState('rmse')
   const all = useMemo(() => getRealScatterData(), [])
-  const { active, rest } = useMemo(() => {
-    const a = []
-    const b = []
-    all.forEach((p) => (p.floatWmo === selected.wmo ? a : b).push(p))
-    return { active: a, rest: b }
-  }, [all, selected])
+  const active = all
+  const rest = []
 
   const axis = { fill: '#5a5e56', fontSize: 10, fontFamily: 'IBM Plex Mono' }
   const metricLabel = metric === 'rmse' ? 'RMSE (°C)' : metric === 'corr' ? 'Pearson R' : 'Bias (°C)'
@@ -25,10 +21,9 @@ export default function ValidationSection() {
       <div className="wrap-wide">
         <SectionHead index="05" title="Argo is the exam." italic="Not the textbook.">
           <p className="lede" style={{ marginTop: 18 }}>
-            Independent floats across the North Indian Ocean, pulled live from
-            Argovis / IFREMER (through 4 September 2026). Reconstruction scores
-            stay blank until models are trained. Click a WMO identifier to
-            isolate its profiles.
+            OceanUNet versus GLORYS on the 2024 unseen test year — 366 days,
+            48.5 million ocean cells. It beats climatology and loses to
+            persistence. That is the real exam, not a seeded scatter.
           </p>
         </SectionHead>
 
@@ -36,16 +31,16 @@ export default function ValidationSection() {
           <figure className="figure">
             <header>
               <div>
-                <h3>Observed versus reconstructed</h3>
-                <p>WMO {selected.wmo} · {selected.basin}</p>
+                <h3>GLORYS versus OceanUNet</h3>
+                <p>2024-08-29 test day · 200 ocean cells</p>
               </div>
-              <p>R {selected.floatCorr} · RMSE {selected.floatRMSE}</p>
+              <p>RMSE {MODEL_METRICS.rmse} °C · skill vs clim {MODEL_METRICS.skill_vs_clim_pct}%</p>
             </header>
             <ResponsiveContainer width="100%" height={300}>
               <ScatterChart margin={{ top: 8, right: 8, bottom: 22, left: 8 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="rgba(22,25,31,0.08)" />
                 <XAxis type="number" dataKey="observed" domain={[4, 32]} tick={axis} label={{ value: 'Argo observed (°C)', position: 'insideBottom', offset: -12, fill: '#5a5e56', fontSize: 11 }} />
-                <YAxis type="number" dataKey="predicted" domain={[4, 32]} tick={axis} label={{ value: 'OceanEmbed (°C)', angle: -90, position: 'insideLeft', fill: '#5a5e56', fontSize: 11 }} />
+                <YAxis type="number" dataKey="predicted" domain={[4, 32]} tick={axis} label={{ value: 'OceanUNet (°C)', angle: -90, position: 'insideLeft', fill: '#5a5e56', fontSize: 11 }} />
                 <ReferenceLine segment={[{ x: 4, y: 4 }, { x: 32, y: 32 }]} stroke="#214f4a" strokeDasharray="4 4" />
                 <Tooltip content={({ active: on, payload }) => {
                   if (!on || !payload?.length) return null
@@ -71,7 +66,7 @@ export default function ValidationSection() {
                 <p>Thermocline band 50–200 m</p>
               </div>
               <div className="seg">
-                {['rmse', 'corr', 'bias'].map((id) => (
+                {['rmse'].map((id) => (
                   <button key={id} className={metric === id ? 'active' : ''} onClick={() => setMetric(id)}>
                     {id}
                   </button>
@@ -89,11 +84,23 @@ export default function ValidationSection() {
                   const d = payload[0].payload
                   return <div className="tip">{d.depth} m · {metric.toUpperCase()} {d[metric]}</div>
                 }} />
-                {metric === 'bias' && <ReferenceLine x={0} stroke="rgba(22,25,31,0.2)" />}
-                <Line type="monotone" dataKey={metric} stroke="#214f4a" strokeWidth={2} dot={{ r: 3, fill: '#214f4a' }} />
+                {metric === 'rmse' && <Line type="monotone" dataKey="clim_rmse" stroke="#c45c26" strokeWidth={1.5} strokeDasharray="4 4" dot={false} name="climatology" />}
+                {metric === 'rmse' && <Line type="monotone" dataKey="persist_rmse" stroke="#5a5e56" strokeWidth={1.5} strokeDasharray="2 2" dot={false} name="persistence" />}
+                <Line type="monotone" dataKey={metric === 'rmse' ? 'rmse' : metric} stroke="#214f4a" strokeWidth={2} dot={{ r: 3, fill: '#214f4a' }} />
               </LineChart>
             </ResponsiveContainer>
           </figure>
+        </div>
+
+        <div className="lede" style={{ margin: '28px 0 12px', maxWidth: 720 }}>
+          <p className="kicker" style={{ marginBottom: 8 }}>Why it fails the persistence test</p>
+          <h3 style={{ marginBottom: 10 }}>{MODEL_FAILURE.headline}</h3>
+          <ul style={{ margin: 0, paddingLeft: 18, color: '#5a5e56', fontSize: '0.95rem' }}>
+            {MODEL_FAILURE.why.map((line) => (
+              <li key={line} style={{ marginBottom: 6 }}>{line}</li>
+            ))}
+          </ul>
+          <p style={{ marginTop: 12, fontSize: '0.88rem', color: '#5a5e56' }}>{MODEL_FAILURE.not_a_forecast}</p>
         </div>
 
         <div className="float-row">

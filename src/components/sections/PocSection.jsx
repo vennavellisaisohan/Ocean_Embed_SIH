@@ -25,7 +25,7 @@ const VIEWS = [
 export default function PocSection() {
   const [layer, setLayer] = useState('theta')
   const [depth, setDepth] = useState(100)
-  const [dateId, setDateId] = useState('2025-04-25')
+  const [dateId, setDateId] = useState('2024-08-29')
   const [pin, setPin] = useState(DEFAULT)
   const [view, setView] = useState('live')
 
@@ -43,9 +43,9 @@ export default function PocSection() {
       <div className="wrap-wide">
         <SectionHead index="03" title="A working column" italic="over the basin.">
           <p className="lede" style={{ marginTop: 18 }}>
-            MapCN globe and map, ocean-only raster. Depth, date, and pin
-            change the field — the numbers in the panel are the same values
-            painted on the water.
+            OceanUNet θ on the 2024-08-29 unseen test day, same 0.25° NIO grid
+            as training. Pin a cell, read the reconstructed column against
+            GLORYS — not a seeded mock field.
           </p>
         </SectionHead>
 
@@ -126,15 +126,15 @@ export default function PocSection() {
               </p>
               <div className="isotherms poc-vars">
                 <article>
-                  <div className="v">{surface.sst.toFixed(2)}</div>
+                  <div className="v">{Number.isFinite(surface.sst) ? surface.sst.toFixed(2) : '—'}</div>
                   <div className="l">SST °C</div>
                 </article>
                 <article>
-                  <div className="v">{surface.sss.toFixed(2)}</div>
+                  <div className="v">{Number.isFinite(surface.sss) ? surface.sss.toFixed(2) : '—'}</div>
                   <div className="l">SSS PSU</div>
                 </article>
                 <article>
-                  <div className="v">{surface.sla.toFixed(3)}</div>
+                  <div className="v">{Number.isFinite(surface.sla) ? surface.sla.toFixed(3) : '—'}</div>
                   <div className="l">SLA m</div>
                 </article>
                 <article>
@@ -151,7 +151,7 @@ export default function PocSection() {
           <div className="panel-card">
             <h3>Inputs at pin</h3>
             <p className="poc-pin">
-              Wind {surface.wind.toFixed(1)} m/s · currents {surface.speed.toFixed(2)} m/s · evaporative {surface.evap.toFixed(0)} W/m²
+              Wind {Number.isFinite(surface.wind) ? surface.wind.toFixed(1) : '—'} m/s · currents {Number.isFinite(surface.speed) ? surface.speed.toFixed(2) : '—'} m/s · TCHP {Number.isFinite(surface.tchp) ? surface.tchp.toFixed(0) : '—'} kJ/cm²
             </p>
             <div className="embed-grid" aria-hidden="true">
               {Array.from(latent).map((z, i) => {
@@ -185,8 +185,9 @@ export default function PocSection() {
         </div>
 
         <p className="method-note" style={{ color: 'rgba(239,232,220,0.55)' }}>
-          Raster is clipped to water. Click an ARGO float or the ocean to move
-          the pin. The profile, TCHP, and map colour use that same column.
+          Each white box is one 0.25° × 0.25° model cell. Yellow highlights
+          one cell. Green dots are Argo observations, not predictions.
+          Click the ocean or a green dot to move the pin.
         </p>
       </div>
     </section>

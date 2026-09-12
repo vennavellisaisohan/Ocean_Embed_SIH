@@ -9,9 +9,12 @@ import PocSection from './components/sections/PocSection'
 import ExplorerSection from './components/sections/ExplorerSection'
 import ValidationSection from './components/sections/ValidationSection'
 import ExperimentsSection from './components/sections/ExperimentsSection'
+import CycloneWarningSection from './components/sections/CycloneWarningSection'
 import ImpactSection from './components/sections/ImpactSection'
 import FooterSection from './components/sections/FooterSection'
 import { setLenis, scrollToId } from './lib/scroll'
+import { loadOceanGrid } from './lib/modelStore'
+import ErrorBoundary from './components/ErrorBoundary'
 
 function prefersReducedMotion() {
   return typeof window !== 'undefined'
@@ -21,7 +24,14 @@ function prefersReducedMotion() {
 export default function App() {
   const [scrollProgress, setScrollProgress] = useState(0)
   const [navOnPaper, setNavOnPaper] = useState(false)
+  const [gridTick, setGridTick] = useState(0)
   const reduced = prefersReducedMotion()
+
+  useEffect(() => {
+    loadOceanGrid()
+      .then(() => setGridTick((n) => n + 1))
+      .catch((err) => console.warn('Ocean grid snapshot failed', err))
+  }, [])
 
   const handleScroll = useCallback(() => {
     const track = document.getElementById('hero-track')
@@ -122,9 +132,18 @@ export default function App() {
       <div id="problem"><ProblemSection /></div>
       <div id="metrics"><MetricsStrip /></div>
       <div id="pipeline"><PipelineSection /></div>
-      <div id="poc" data-theme="dark"><PocSection /></div>
-      <div id="explorer" data-theme="dark"><ExplorerSection /></div>
+      <div id="poc" data-theme="dark">
+        <ErrorBoundary>
+          <PocSection key={gridTick} />
+        </ErrorBoundary>
+      </div>
+      <div id="explorer" data-theme="dark">
+        <ErrorBoundary>
+          <ExplorerSection />
+        </ErrorBoundary>
+      </div>
       <div id="validation"><ValidationSection /></div>
+      <div id="cyclones"><CycloneWarningSection /></div>
       <div id="experiments"><ExperimentsSection /></div>
       <div id="impact"><ImpactSection /></div>
       <FooterSection />

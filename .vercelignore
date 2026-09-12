@@ -1,0 +1,8 @@
+OceanEmbed
+.venv
+node_modules
+.git
+*.npy
+*.pt
+data/processed
+data/raw

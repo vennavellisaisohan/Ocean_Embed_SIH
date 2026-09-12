@@ -3,7 +3,7 @@ import { SectionHead } from '../ui'
 const ITEMS = [
   {
     title: 'Disaster risk',
-    body: 'TCHP, D₂₆ and D₂₀ for marine heatwaves and cyclone intensification over the North Indian Ocean — the SIH theme, not a footnote.',
+    body: '7-day cyclone early warning and intensity over the North Indian Ocean, plus TCHP / D₂₆ for heat content. Location is still a known gap — we do not claim 7-day track accuracy.',
   },
   {
     title: 'Fisheries & ecosystems',

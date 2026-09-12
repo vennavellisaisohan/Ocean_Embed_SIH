@@ -1,11 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
+import { METRICS_5F } from '../../lib/cycloneHackathon'
 
-const METRICS = [
-  { id: 'rmse', label: 'Overall RMSE', value: 0.86, suffix: ' °C', decimals: 2 },
-  { id: 'r', label: 'Correlation R', value: 0.92, suffix: '', decimals: 2 },
-  { id: 'argo', label: 'Independent Argo profiles', value: 12534, suffix: '', int: true },
-  { id: 'grid', label: 'Daily NIO grid', value: 0.25, suffix: '°', decimals: 2 },
-]
+const METRICS = METRICS_5F
 
 function Count({ value, suffix, decimals = 0, int, inView }) {
   const [n, setN] = useState(0)

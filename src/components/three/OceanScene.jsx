@@ -775,26 +775,62 @@ function ColumnParticles({ count = 240, width = 2.4, height = 3.0, depth = 2.4 }
   )
 }
 
-export function VolumetricOceanColumn({ activeDepth = 0, currentTemp = 28.5 }) {
+function tempToColor(t) {
+  if (t == null || !Number.isFinite(t)) return '#214f4a'
+  if (t >= 28) return '#e8c98a'
+  if (t >= 26) return '#c4a574'
+  if (t >= 22) return '#c45c26'
+  if (t >= 16) return '#6aa8a0'
+  if (t >= 10) return '#2f6b64'
+  return '#16343f'
+}
+
+function depthToY(depth, colH) {
+  return 1.2 - (Math.min(1000, Math.max(0, depth)) / 1000) * colH
+}
+
+export function VolumetricOceanColumn({
+  activeDepth = 0,
+  currentTemp = 28.5,
+  profile = [],
+  d26 = 80,
+  d20 = 140,
+}) {
   const laserRef = useRef()
   const probeRef = useRef()
   const pingRef = useRef()
 
-  const colW = 1.9
-  const colH = 2.4
-  const colD = 1.9
+  const colW = 1.85
+  const colH = 2.55
+  const colD = 1.85
+  const targetY = depthToY(activeDepth, colH)
+  const sliceColor = tempToColor(currentTemp)
 
-  // Box bounds: y from +1.2 (0m surface) to -1.2 (1000m abyss)
-  const targetY = 1.2 - (activeDepth / 1000) * colH
-
-  // Dynamic temperature gradient color
-  const sliceColor = currentTemp >= 27
-    ? '#c4a574'
-    : currentTemp >= 22
-      ? '#c45c26'
-      : currentTemp >= 14
-        ? '#8fbfb4'
-        : '#2f6b64'
+  const slabs = useMemo(() => {
+    const pts = (profile || [])
+      .filter((p) => p && Number.isFinite(p.depth) && Number.isFinite(p.predicted ?? p.observed))
+      .sort((a, b) => a.depth - b.depth)
+    if (pts.length < 2) return []
+    const out = []
+    for (let i = 0; i < pts.length - 1; i++) {
+      const a = pts[i]
+      const b = pts[i + 1]
+      const y0 = depthToY(a.depth, colH)
+      const y1 = depthToY(b.depth, colH)
+      const h = Math.max(0.02, y0 - y1)
+      const mid = (y0 + y1) / 2
+      const t = a.predicted ?? a.observed
+      out.push({
+        key: `${a.depth}-${b.depth}`,
+        y: mid,
+        h,
+        color: tempToColor(t),
+        thermo: a.depth >= 50 && a.depth < 200,
+        opacity: a.depth >= 50 && a.depth < 200 ? 0.28 : 0.16,
+      })
+    }
+    return out
+  }, [profile, colH])
 
   useFrame((state) => {
     if (laserRef.current) {
@@ -812,49 +848,72 @@ export function VolumetricOceanColumn({ activeDepth = 0, currentTemp = 28.5 }) {
   })
 
   return (
-    <group position={[0, 0.05, 0]} rotation={[0.12, 0.48, 0]} scale={0.88}>
-      {/* Ocean Strata Translucent Water Volume */}
-      <mesh position={[0, 0, 0]}>
-        <boxGeometry args={[colW, colH, colD]} />
+    <group position={[0, 0.02, 0]} rotation={[0.1, 0.42, 0]} scale={0.92}>
+      {/* Temperature-colored water slabs from the real profile */}
+      {slabs.map((s) => (
+        <mesh key={s.key} position={[0, s.y, 0]}>
+          <boxGeometry args={[colW - 0.08, s.h, colD - 0.08]} />
+          <meshLambertMaterial
+            color={s.color}
+            transparent
+            opacity={Math.min(0.55, s.opacity + 0.22)}
+            depthWrite={false}
+            side={THREE.DoubleSide}
+          />
+        </mesh>
+      ))}
+
+      {/* Thermocline band */}
+      <mesh position={[0, (depthToY(50, colH) + depthToY(200, colH)) / 2, 0]}>
+        <boxGeometry args={[colW + 0.04, Math.abs(depthToY(50, colH) - depthToY(200, colH)), colD + 0.04]} />
         <meshBasicMaterial
-          color="#1a5854"
+          color="#c45c26"
           transparent
-          opacity={0.1}
-          blending={THREE.AdditiveBlending}
-          side={THREE.DoubleSide}
+          opacity={0.07}
           depthWrite={false}
+          side={THREE.DoubleSide}
         />
       </mesh>
 
-      {/* Main Structural Bounding Wireframe */}
-      <lineSegments position={[0, 0, 0]}>
+      <lineSegments>
         <edgesGeometry args={[new THREE.BoxGeometry(colW, colH, colD)]} />
-        <lineBasicMaterial color="#c4a574" transparent opacity={0.45} />
+        <lineBasicMaterial color="#d7c4a3" transparent opacity={0.55} />
       </lineSegments>
 
-      {/* Depth Strata Reference Planes & Gridlines */}
+      {/* Surface cap */}
+      <mesh position={[0, 1.2, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <planeGeometry args={[colW, colD]} />
+        <meshBasicMaterial color="#7ec8c0" transparent opacity={0.18} side={THREE.DoubleSide} depthWrite={false} />
+      </mesh>
+
       {[
-        { d: 0, label: '0m Surface', col: '#c4a574', op: 0.5 },
-        { d: 100, label: '100m', col: '#c45c26', op: 0.35 },
-        { d: 200, label: '200m D20', col: '#d08258', op: 0.4 },
-        { d: 500, label: '500m', col: '#8fbfb4', op: 0.25 },
-        { d: 1000, label: '1000m Abyss', col: '#3d4a58', op: 0.35 },
-      ].map((s) => {
-        const y = 1.2 - (s.d / 1000) * colH
-        return (
-          <group key={s.d} position={[0, y, 0]}>
-            <lineSegments rotation={[-Math.PI / 2, 0, 0]}>
-              <edgesGeometry args={[new THREE.PlaneGeometry(colW, colD)]} />
-              <lineBasicMaterial color={s.col} transparent opacity={s.op} />
-            </lineSegments>
-            {/* Depth Notch Indicators on Pillar Corner */}
-            <mesh position={[-colW / 2, 0, colD / 2]}>
-              <sphereGeometry args={[0.03, 8, 8]} />
-              <meshBasicMaterial color={s.col} />
-            </mesh>
-          </group>
-        )
-      })}
+        { d: 0, col: '#e8c98a', op: 0.55 },
+        { d: 50, col: '#c45c26', op: 0.28 },
+        { d: 200, col: '#d08258', op: 0.32 },
+        { d: 500, col: '#8fbfb4', op: 0.22 },
+        { d: 1000, col: '#3d4a58', op: 0.35 },
+      ].map((s) => (
+        <group key={s.d} position={[0, depthToY(s.d, colH), 0]}>
+          <lineSegments rotation={[-Math.PI / 2, 0, 0]}>
+            <edgesGeometry args={[new THREE.PlaneGeometry(colW, colD)]} />
+            <lineBasicMaterial color={s.col} transparent opacity={s.op} />
+          </lineSegments>
+        </group>
+      ))}
+
+      {/* D26 / D20 isotherm planes */}
+      {Number.isFinite(d26) && d26 > 0 && (
+        <mesh position={[0, depthToY(d26, colH), 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[colW - 0.02, colD - 0.02]} />
+          <meshBasicMaterial color="#f0e642" transparent opacity={0.22} side={THREE.DoubleSide} depthWrite={false} />
+        </mesh>
+      )}
+      {Number.isFinite(d20) && d20 > 0 && (
+        <mesh position={[0, depthToY(d20, colH), 0]} rotation={[-Math.PI / 2, 0, 0]}>
+          <planeGeometry args={[colW - 0.06, colD - 0.06]} />
+          <meshBasicMaterial color="#c45c26" transparent opacity={0.16} side={THREE.DoubleSide} depthWrite={false} />
+        </mesh>
+      )}
 
       {/* Animated Laser Slicing Plane */}
       <group ref={laserRef} position={[0, targetY, 0]}>
@@ -863,8 +922,7 @@ export function VolumetricOceanColumn({ activeDepth = 0, currentTemp = 28.5 }) {
           <meshBasicMaterial
             color={sliceColor}
             transparent
-            opacity={0.32}
-            blending={THREE.AdditiveBlending}
+            opacity={0.45}
             side={THREE.DoubleSide}
             depthWrite={false}
           />

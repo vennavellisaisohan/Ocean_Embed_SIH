@@ -38,7 +38,7 @@ function useMapCanvas(paint) {
 export function CyclonePanel({ dateId }) {
   const paint = useCallback((ctx, dw, dh, w, h, dpr) => {
     const field = getField('evap', 0, dateId)
-    paintField(ctx, field, 'evap', 20, 300, dw, dh, [48, 42, 72])
+    paintField(ctx, field, 'evap', field.vmin, field.vmax, dw, dh, [48, 42, 72])
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
     drawGrid(ctx, w, h, 'rgba(241,235,225,0.18)')
     drawTracks(ctx, w, h, { dark: false })
@@ -48,7 +48,7 @@ export function CyclonePanel({ dateId }) {
   return (
     <figure className="sci-figure dark">
       <header>
-        <h3>Evaporation and cyclone tracks — Ditwah &amp; Senyar</h3>
+        <h3>UNet TCHP and IBTrACS track — 29 Aug 2024 (ASNA)</h3>
         <p>ERA5-style latent heat flux · satellite SST × wind · 0.25°</p>
       </header>
       <div className="sci-canvas" ref={wrap}><canvas ref={ref} /></div>

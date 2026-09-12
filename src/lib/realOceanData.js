@@ -3,12 +3,12 @@
  * Smart India Hackathon 2026 | Problem Statement SIH26066
  *
  * Live Argo observed profiles are merged from src/lib/liveOcean.json
- * (Argovis / IFREMER GDAC, pulled 2026-09-06). Surface fields live in
- * /data/*.json (OISST, SMAP SSS, altimetry SLA/currents, NCEI winds,
- * INCOIS 10-day gridded Argo). Reconstruction models are not trained yet.
+ * (Argovis / IFREMER GDAC). Reconstructed θ comes from the trained
+ * OceanUNet on the 2024-08-29 unseen test day vs GLORYS.
  */
 
 import liveOcean from './liveOcean.json'
+import { MODEL } from './modelStore'
 
 export const OFFICIAL_DEPTHS = [0, 5, 10, 20, 30, 50, 75, 100, 125, 150, 200, 300, 500, 700, 1000];
 
@@ -32,17 +32,30 @@ function applyLiveRegions(regions, live) {
     if (src.d20 != null) target.d20 = src.d20
     if (src.d26 != null) target.d26 = src.d26
     target.climatologySource = `${src.source} ${src.lastDate} WMO ${src.wmo}`
-    const prev = Object.fromEntries((target.profile || []).map((p) => [p.depth, p]))
+    const modelProfile = MODEL.profiles?.[key]?.profile || []
+    const byDepth = Object.fromEntries(modelProfile.map((p) => [p.depth, p]))
     target.profile = src.profile.map((p) => {
-      const old = prev[p.depth]
-      const predicted = old?.predicted ?? p.observed
+      const m = byDepth[p.depth]
+      const predicted = m?.predicted ?? null
+      const observed = m?.observed ?? p.observed
       return {
         depth: p.depth,
-        observed: p.observed,
+        observed,
         predicted,
-        error: parseFloat((predicted - p.observed).toFixed(2)),
+        error: predicted == null || observed == null ? null : parseFloat((predicted - observed).toFixed(2)),
       }
     })
+    if (MODEL.profiles?.[key]) {
+      const mp = MODEL.profiles[key]
+      target.lat = mp.lat
+      target.lon = mp.lon
+      if (mp.d26 != null) target.d26 = mp.d26
+      if (mp.d20 != null) target.d20 = mp.d20
+      if (mp.sss != null) target.salinity = mp.sss
+      if (mp.sst != null) target.meanSST = mp.sst
+      if (mp.tchp != null) target.tchp = mp.tchp
+      target.climatologySource = `OceanUNet vs GLORYS ${MODEL.sample_date}`
+    }
   })
 }
 
@@ -67,7 +80,7 @@ function liveFloats(live) {
     profilePoints: (f.profile || []).map((p) => ({
       depth: p.depth,
       observed: p.observed,
-      predicted: p.observed,
+      predicted: null,
     })),
   }))
 }
@@ -199,56 +212,30 @@ export const REAL_ARGO_FLOATS = liveFloats(liveOcean);
 
 // Comprehensive 200-point in-situ scatter dataset across North Indian Ocean ARGO moorings
 export function getRealScatterData() {
-  const points = [];
-  // Sample across the 5 floats with slight measurement dispersion
-  REAL_ARGO_FLOATS.forEach(f => {
-    f.profilePoints.forEach(pt => {
-      points.push({
-        observed: pt.observed,
-        predicted: pt.predicted,
-        depth: pt.depth,
-        floatWmo: f.wmo,
-        basin: f.basin,
-        residual: parseFloat((pt.predicted - pt.observed).toFixed(2))
-      });
-      // Add realistic adjacent cycle points
-      for (let c = 1; c <= 3; c++) {
-        const obsNoise = (Math.sin(pt.depth * 0.1 + c) * 0.35);
-        const predNoise = (Math.cos(pt.depth * 0.15 + c) * 0.30);
-        const obs = Math.max(4.5, parseFloat((pt.observed + obsNoise).toFixed(2)));
-        const pred = Math.max(4.5, parseFloat((pt.predicted + predNoise).toFixed(2)));
-        points.push({
-          observed: obs,
-          predicted: pred,
-          depth: pt.depth,
-          floatWmo: f.wmo,
-          basin: f.basin,
-          residual: parseFloat((pred - obs).toFixed(2))
-        });
-      }
-    });
-  });
-  return points;
+  return (MODEL.scatter || []).map((p) => ({
+    observed: p.observed,
+    predicted: p.predicted,
+    depth: p.depth,
+    floatWmo: 'GLORYS',
+    basin: p.lon < 77.5 ? 'Arabian Sea' : 'Bay of Bengal',
+    residual: parseFloat((p.predicted - p.observed).toFixed(2)),
+  }))
 }
 
 // Depth-resolved skill curves derived from INCOIS validation runs
-export const DEPTH_RESOLVED_METRICS = [
-  { depth: 0, rmse: 0.38, corr: 0.98, bias: -0.04 },
-  { depth: 5, rmse: 0.41, corr: 0.98, bias: -0.05 },
-  { depth: 10, rmse: 0.44, corr: 0.97, bias: -0.05 },
-  { depth: 20, rmse: 0.52, corr: 0.96, bias: -0.07 },
-  { depth: 30, rmse: 0.65, corr: 0.95, bias: -0.11 },
-  { depth: 50, rmse: 0.92, corr: 0.91, bias: 0.14 },
-  { depth: 75, rmse: 1.18, corr: 0.88, bias: 0.28 },
-  { depth: 100, rmse: 1.34, corr: 0.86, bias: 0.32 },
-  { depth: 125, rmse: 1.15, corr: 0.89, bias: 0.24 },
-  { depth: 150, rmse: 0.94, corr: 0.92, bias: 0.18 },
-  { depth: 200, rmse: 0.72, corr: 0.94, bias: 0.12 },
-  { depth: 300, rmse: 0.55, corr: 0.96, bias: 0.08 },
-  { depth: 500, rmse: 0.42, corr: 0.97, bias: 0.05 },
-  { depth: 700, rmse: 0.35, corr: 0.98, bias: 0.03 },
-  { depth: 1000, rmse: 0.26, corr: 0.99, bias: 0.02 }
-];
+export const DEPTH_RESOLVED_METRICS = (MODEL.depth_metrics || []).map((d) => ({
+  depth: d.depth,
+  rmse: d.rmse,
+  clim_rmse: d.clim_rmse,
+  persist_rmse: d.persist_rmse,
+  corr: d.corr,
+  bias: d.bias,
+  skill_vs_clim_pct: d.skill_vs_clim_pct,
+}))
+
+export const MODEL_FAILURE = MODEL.failure
+export const MODEL_METRICS = MODEL.metrics
+export const MODEL_SAMPLE_DATE = MODEL.sample_date
 
 // SIH 2026 Model Architectures benchmark specs & diagnostics
 export const ARCHITECTURE_DETAILS = {
@@ -270,19 +257,19 @@ export const ARCHITECTURE_DETAILS = {
   },
   "model-cnn": {
     id: "model-cnn",
-    name: "CNN / U-Net",
-    category: "Deep Learning (Convolutional)",
-    overallRMSE: 1.38,
-    thermoclineRMSE: 1.92,
-    deepRMSE: 0.89,
-    corr: 0.84,
-    bias: -0.15,
-    inferenceTimeMs: 45,
-    parameters: "14.2M",
-    status: "Trained",
+    name: "OceanUNet",
+    category: "Deep Learning (Convolutional) — trained",
+    overallRMSE: MODEL.metrics.rmse,
+    thermoclineRMSE: MODEL.metrics.thermocline_100m_rmse,
+    deepRMSE: 0.37,
+    corr: Math.sqrt(Math.max(0, MODEL.metrics.r2)),
+    bias: MODEL.metrics.bias,
+    inferenceTimeMs: 6,
+    parameters: "1.80M",
+    status: "Trained · 2024 test",
     color: "#6366f1",
-    description: "2D Convolutional encoder-decoder with residual skips. Captures mesoscale eddies and front structures, but suffers from receptive field limitations over planetary wave scales.",
-    radarScores: { thermoclineSkill: 65, deepFidelity: 72, spatialCoherence: 78, latencyScore: 82, parameterEfficiency: 75 }
+    description: "7-channel surface U-Net → 13-depth θ. Beats 2018–2022 climatology by 45% RMSE on 2024, but loses to persistence (0.17 °C) because daily ocean temperature has long memory and the thermocline is under-determined by satellites.",
+    radarScores: { thermoclineSkill: 41, deepFidelity: 40, spatialCoherence: 70, latencyScore: 95, parameterEfficiency: 92 }
   },
   "model-ae": {
     id: "model-ae",
@@ -295,7 +282,7 @@ export const ARCHITECTURE_DETAILS = {
     bias: 0.09,
     inferenceTimeMs: 38,
     parameters: "9.8M",
-    status: "Trained",
+    status: "Not trained",
     color: "#10b981",
     description: "Latent manifold reconstruction with bottleneck compression z in R^256. Effectively denoises satellite observational gaps, but blurs sharp vertical thermocline gradients.",
     radarScores: { thermoclineSkill: 74, deepFidelity: 80, spatialCoherence: 82, latencyScore: 86, parameterEfficiency: 85 }
@@ -311,7 +298,7 @@ export const ARCHITECTURE_DETAILS = {
     bias: 0.05,
     inferenceTimeMs: 71,
     parameters: "6.4M",
-    status: "Trained",
+    status: "Not trained",
     color: "#a6844a",
     description: "0.25° NIO mesh with message passing along geostrophic neighbours. Captures eddy teleconnections the CNN receptive field misses, but still loses basin-scale SLA structure that self-attention holds.",
     radarScores: { thermoclineSkill: 82, deepFidelity: 88, spatialCoherence: 90, latencyScore: 70, parameterEfficiency: 88 }
@@ -327,9 +314,9 @@ export const ARCHITECTURE_DETAILS = {
     bias: -0.07,
     inferenceTimeMs: 62,
     parameters: "24.6M",
-    status: "★ Production Flagship",
+    status: "Not trained",
     color: "#06b6d4",
-    description: "Multi-head spatial self-attention cross-attending SST, SSS, SLA, surface currents, and wind stress tokens. Reconstructs full 3D baroclinic structure with physics-guided loss.",
+    description: "Placeholder architecture. Not trained. Do not treat these RMSE numbers as results — only OceanUNet has a 2024 test score.",
     radarScores: { thermoclineSkill: 94, deepFidelity: 96, spatialCoherence: 95, latencyScore: 78, parameterEfficiency: 80 }
   }
 };

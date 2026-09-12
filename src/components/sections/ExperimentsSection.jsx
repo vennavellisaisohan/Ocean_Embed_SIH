@@ -3,7 +3,7 @@ import { ARCHITECTURE_DETAILS } from '../../lib/realOceanData'
 import { SectionHead } from '../ui'
 
 export default function ExperimentsSection() {
-  const [id, setId] = useState('model-vit-oceanembed')
+  const [id, setId] = useState('model-cnn')
   const models = Object.values(ARCHITECTURE_DETAILS)
   const active = ARCHITECTURE_DETAILS[id]
   const meters = [
@@ -18,8 +18,8 @@ export default function ExperimentsSection() {
       <div className="wrap-wide">
         <SectionHead index="06" title="Five architectures." italic="One that holds.">
           <p className="lede" style={{ marginTop: 18 }}>
-            Linear baseline, CNN, autoencoder, graph net, then OceanEmbed-ViT.
-            Same inputs. Same depths. Same Argo exam.
+            Only OceanUNet is trained and scored on the 2024 GLORYS test year.
+            The other rows are architecture sketches, not results.
           </p>
         </SectionHead>
 
@@ -68,13 +68,13 @@ export default function ExperimentsSection() {
             <tbody>
               {models.map((m) => (
                 <tr key={m.id} className={m.id === id ? 'active' : ''} onClick={() => setId(m.id)}>
-                  <td className={m.id === 'model-vit-oceanembed' ? 'prod' : ''}>{m.name}</td>
-                  <td>{m.overallRMSE.toFixed(2)}</td>
-                  <td>{m.thermoclineRMSE.toFixed(2)}</td>
-                  <td>{m.deepRMSE.toFixed(2)}</td>
-                  <td>{m.corr.toFixed(2)}</td>
-                  <td>{m.bias >= 0 ? '+' : ''}{m.bias.toFixed(2)}</td>
-                  <td>{m.inferenceTimeMs} ms</td>
+                  <td className={m.id === 'model-cnn' ? 'prod' : ''}>{m.name}</td>
+                  <td>{m.status.startsWith('Trained') ? m.overallRMSE.toFixed(2) : '—'}</td>
+                  <td>{m.status.startsWith('Trained') ? m.thermoclineRMSE.toFixed(2) : '—'}</td>
+                  <td>{m.status.startsWith('Trained') ? m.deepRMSE.toFixed(2) : '—'}</td>
+                  <td>{m.status.startsWith('Trained') ? m.corr.toFixed(2) : '—'}</td>
+                  <td>{m.status.startsWith('Trained') ? `${m.bias >= 0 ? '+' : ''}${m.bias.toFixed(2)}` : '—'}</td>
+                  <td>{m.status.startsWith('Trained') ? `${m.inferenceTimeMs} ms` : '—'}</td>
                 </tr>
               ))}
             </tbody>

@@ -1,217 +1,107 @@
 {
-  "count": 12,
+  "count": 112,
+  "pulledAt": "2026-09-12T00:00:00Z",
+  "note": "Green dots: latest Argovis / IFREMER Argo positions in 5\u201330N, 45\u2013105E (unique platform, latest cycle Aug\u2013Sep 2026). Colored 0.25\u00b0 field is trained OceanUNet / cyclone hurdle on 2024-08-29 \u2014 not mock Argo. Dates of floats and model field do not match; floats are live measurements, the field is what the trained model produces everywhere.",
   "profiles": [
     {
-      "id": "argo-7901136",
-      "wmo": "7901136",
-      "cycle": 119,
-      "lat": 15.583,
-      "lon": 68.808,
-      "lastDate": "2026-08-29",
+      "id": "argo-2903956",
+      "wmo": "2903956",
+      "cycle": 267,
+      "lat": 19.4913,
+      "lon": 62.1371,
+      "lastDate": "2026-09-04",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7901136/profiles/R7901136_119.nc",
-      "surfaceTemp": 28.35,
-      "salinity": null,
-      "d20": 141,
-      "d26": 81,
-      "profile": [
-        {
-          "depth": 0,
-          "observed": 28.35,
-          "predicted": 28.35,
-          "error": 0.0
-        },
-        {
-          "depth": 5,
-          "observed": 28.35,
-          "predicted": 28.35,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 28.35,
-          "predicted": 28.35,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 28.34,
-          "predicted": 28.34,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 28.28,
-          "predicted": 28.28,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 28.22,
-          "predicted": 28.22,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 26.98,
-          "predicted": 26.98,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 23.21,
-          "predicted": 23.21,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 20.86,
-          "predicted": 20.86,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 19.51,
-          "predicted": 19.51,
-          "error": 0.0
-        },
-        {
-          "depth": 200,
-          "observed": 17.03,
-          "predicted": 17.03,
-          "error": 0.0
-        },
-        {
-          "depth": 300,
-          "observed": 14.02,
-          "predicted": 14.02,
-          "error": 0.0
-        },
-        {
-          "depth": 500,
-          "observed": 11.97,
-          "predicted": 11.97,
-          "error": 0.0
-        },
-        {
-          "depth": 700,
-          "observed": 10.75,
-          "predicted": 10.75,
-          "error": 0.0
-        },
-        {
-          "depth": 1000,
-          "observed": 8.18,
-          "predicted": 8.18,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/2903956/profiles/R2903956_267.nc"
     },
     {
-      "id": "argo-2903434",
-      "wmo": "2903434",
-      "cycle": 86,
-      "lat": 13.038,
-      "lon": 87.03,
-      "lastDate": "2026-08-29",
+      "id": "argo-5907141",
+      "wmo": "5907141",
+      "cycle": 250,
+      "lat": 25.4112,
+      "lon": 58.4152,
+      "lastDate": "2026-09-04",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903434/profiles/R2903434_086.nc",
-      "surfaceTemp": 29.13,
-      "salinity": 3.2,
-      "d20": 111,
-      "d26": 44,
-      "profile": [
-        {
-          "depth": 0,
-          "observed": 29.13,
-          "predicted": 29.13,
-          "error": 0.0
-        },
-        {
-          "depth": 5,
-          "observed": 29.11,
-          "predicted": 29.11,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 29.1,
-          "predicted": 29.1,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 29.04,
-          "predicted": 29.04,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 27.02,
-          "predicted": 27.02,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 25.51,
-          "predicted": 25.51,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 22.0,
-          "predicted": 22.0,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 20.97,
-          "predicted": 20.97,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 18.81,
-          "predicted": 18.81,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 17.91,
-          "predicted": 17.91,
-          "error": 0.0
-        },
-        {
-          "depth": 200,
-          "observed": 14.94,
-          "predicted": 14.94,
-          "error": 0.0
-        },
-        {
-          "depth": 300,
-          "observed": 11.84,
-          "predicted": 11.84,
-          "error": 0.0
-        },
-        {
-          "depth": 500,
-          "observed": 9.96,
-          "predicted": 9.96,
-          "error": 0.0
-        },
-        {
-          "depth": 700,
-          "observed": 8.68,
-          "predicted": 8.68,
-          "error": 0.0
-        },
-        {
-          "depth": 1000,
-          "observed": 6.92,
-          "predicted": 6.92,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/5907141/profiles/R5907141_250.nc"
+    },
+    {
+      "id": "argo-2903955",
+      "wmo": "2903955",
+      "cycle": 249,
+      "lat": 23.365,
+      "lon": 61.0853,
+      "lastDate": "2026-09-04",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/2903955/profiles/R2903955_249.nc"
+    },
+    {
+      "id": "argo-6990700",
+      "wmo": "6990700",
+      "cycle": 70,
+      "lat": 24.1738,
+      "lon": 58.2342,
+      "lastDate": "2026-09-04",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/6990700/profiles/R6990700_070.nc"
+    },
+    {
+      "id": "argo-5907326",
+      "wmo": "5907326",
+      "cycle": 1,
+      "lat": 19.7854,
+      "lon": 64.9554,
+      "lastDate": "2026-09-04",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907326/profiles/R5907326_001.nc"
+    },
+    {
+      "id": "argo-1902594",
+      "wmo": "1902594",
+      "cycle": 125,
+      "lat": 9.1118,
+      "lon": 86.795,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/1902594/profiles/R1902594_125.nc"
+    },
+    {
+      "id": "argo-3902754",
+      "wmo": "3902754",
+      "cycle": 24,
+      "lat": 13.321,
+      "lon": 62.4004,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/3902754/profiles/R3902754_024.nc"
+    },
+    {
+      "id": "argo-2903149",
+      "wmo": "2903149",
+      "cycle": 101,
+      "lat": 9.9382,
+      "lon": 57.7558,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903149/profiles/R2903149_101.nc"
+    },
+    {
+      "id": "argo-5907083",
+      "wmo": "5907083",
+      "cycle": 109,
+      "lat": 12.3966,
+      "lon": 88.933,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907083/profiles/R5907083_109.nc"
+    },
+    {
+      "id": "argo-1901897",
+      "wmo": "1901897",
+      "cycle": 303,
+      "lat": 17.9069,
+      "lon": 62.0431,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/bodc/1901897/profiles/R1901897_303.nc"
     },
     {
       "id": "argo-2902771",
@@ -221,209 +111,507 @@
       "lon": 74.969,
       "lastDate": "2026-09-03",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902771/profiles/R2902771_257.nc",
-      "surfaceTemp": 30.17,
-      "salinity": 34.19,
-      "d20": 101,
-      "d26": 63,
-      "profile": [
-        {
-          "depth": 0,
-          "observed": 30.17,
-          "predicted": 30.17,
-          "error": 0.0
-        },
-        {
-          "depth": 5,
-          "observed": 29.35,
-          "predicted": 29.35,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 29.2,
-          "predicted": 29.2,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 29.2,
-          "predicted": 29.2,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 28.97,
-          "predicted": 28.97,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 28.17,
-          "predicted": 28.17,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 23.85,
-          "predicted": 23.85,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 20.09,
-          "predicted": 20.09,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 17.04,
-          "predicted": 17.04,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 15.66,
-          "predicted": 15.66,
-          "error": 0.0
-        },
-        {
-          "depth": 200,
-          "observed": 13.53,
-          "predicted": 13.53,
-          "error": 0.0
-        },
-        {
-          "depth": 300,
-          "observed": 11.54,
-          "predicted": 11.54,
-          "error": 0.0
-        },
-        {
-          "depth": 500,
-          "observed": 10.21,
-          "predicted": 10.21,
-          "error": 0.0
-        },
-        {
-          "depth": 700,
-          "observed": 8.95,
-          "predicted": 8.95,
-          "error": 0.0
-        },
-        {
-          "depth": 1000,
-          "observed": 7.0,
-          "predicted": 7.0,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902771/profiles/R2902771_257.nc"
     },
     {
-      "id": "argo-2903149",
-      "wmo": "2903149",
-      "cycle": 101,
-      "lat": 9.938,
-      "lon": 57.756,
+      "id": "argo-2904141",
+      "wmo": "2904141",
+      "cycle": 2,
+      "lat": 9.9167,
+      "lon": 64.9167,
       "lastDate": "2026-09-03",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903149/profiles/R2903149_101.nc",
-      "surfaceTemp": 28.02,
-      "salinity": 36.16,
-      "d20": 191,
-      "d26": 136,
-      "profile": [
-        {
-          "depth": 0,
-          "observed": 28.02,
-          "predicted": 28.02,
-          "error": 0.0
-        },
-        {
-          "depth": 5,
-          "observed": 28.02,
-          "predicted": 28.02,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 28.02,
-          "predicted": 28.02,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 28.03,
-          "predicted": 28.03,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 28.03,
-          "predicted": 28.03,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 28.01,
-          "predicted": 28.01,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 28.0,
-          "predicted": 28.0,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 28.06,
-          "predicted": 28.06,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 27.14,
-          "predicted": 27.14,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 24.57,
-          "predicted": 24.57,
-          "error": 0.0
-        },
-        {
-          "depth": 200,
-          "observed": 18.98,
-          "predicted": 18.98,
-          "error": 0.0
-        },
-        {
-          "depth": 300,
-          "observed": 14.46,
-          "predicted": 14.46,
-          "error": 0.0
-        },
-        {
-          "depth": 500,
-          "observed": 12.44,
-          "predicted": 12.44,
-          "error": 0.0
-        },
-        {
-          "depth": 700,
-          "observed": 10.65,
-          "predicted": 10.65,
-          "error": 0.0
-        },
-        {
-          "depth": 1000,
-          "observed": 8.16,
-          "predicted": 8.16,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/2904141/profiles/R2904141_002.nc"
+    },
+    {
+      "id": "argo-2903142",
+      "wmo": "2903142",
+      "cycle": 137,
+      "lat": 12.2767,
+      "lon": 62.6809,
+      "lastDate": "2026-09-03",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903142/profiles/R2903142_137.nc"
+    },
+    {
+      "id": "argo-1902734",
+      "wmo": "1902734",
+      "cycle": 167,
+      "lat": 19.7319,
+      "lon": 60.2038,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/1902734/profiles/R1902734_167.nc"
+    },
+    {
+      "id": "argo-2902775",
+      "wmo": "2902775",
+      "cycle": 281,
+      "lat": 6.986,
+      "lon": 88.937,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902775/profiles/R2902775_281.nc"
+    },
+    {
+      "id": "argo-6990715",
+      "wmo": "6990715",
+      "cycle": 56,
+      "lat": 11.75,
+      "lon": 68.95,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/6990715/profiles/R6990715_056.nc"
+    },
+    {
+      "id": "argo-7902383",
+      "wmo": "7902383",
+      "cycle": 24,
+      "lat": 13.2512,
+      "lon": 63.7652,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7902383/profiles/R7902383_024.nc"
+    },
+    {
+      "id": "argo-5907254",
+      "wmo": "5907254",
+      "cycle": 24,
+      "lat": 13.5833,
+      "lon": 61.4167,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907254/profiles/R5907254_024.nc"
+    },
+    {
+      "id": "argo-2903147",
+      "wmo": "2903147",
+      "cycle": 101,
+      "lat": 11.954,
+      "lon": 59.3282,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903147/profiles/R2903147_101.nc"
+    },
+    {
+      "id": "argo-5907082",
+      "wmo": "5907082",
+      "cycle": 109,
+      "lat": 14.7667,
+      "lon": 82.8833,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907082/profiles/R5907082_109.nc"
+    },
+    {
+      "id": "argo-2902765",
+      "wmo": "2902765",
+      "cycle": 240,
+      "lat": 10.398,
+      "lon": 88.486,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902765/profiles/R2902765_240.nc"
+    },
+    {
+      "id": "argo-2904140",
+      "wmo": "2904140",
+      "cycle": 2,
+      "lat": 11.3652,
+      "lon": 66.864,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/2904140/profiles/R2904140_002.nc"
+    },
+    {
+      "id": "argo-2902936",
+      "wmo": "2902936",
+      "cycle": 68,
+      "lat": 14.0179,
+      "lon": 63.3996,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902936/profiles/R2902936_068.nc"
+    },
+    {
+      "id": "argo-4903839",
+      "wmo": "4903839",
+      "cycle": 249,
+      "lat": 22.5551,
+      "lon": 66.5285,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/4903839/profiles/R4903839_249.nc"
+    },
+    {
+      "id": "argo-3902751",
+      "wmo": "3902751",
+      "cycle": 24,
+      "lat": 10.1645,
+      "lon": 61.9175,
+      "lastDate": "2026-09-02",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/3902751/profiles/R3902751_024.nc"
+    },
+    {
+      "id": "argo-1902458",
+      "wmo": "1902458",
+      "cycle": 118,
+      "lat": 10.0603,
+      "lon": 62.7607,
+      "lastDate": "2026-09-01",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/1902458/profiles/R1902458_118.nc"
+    },
+    {
+      "id": "argo-5907253",
+      "wmo": "5907253",
+      "cycle": 24,
+      "lat": 9.6345,
+      "lon": 61.9511,
+      "lastDate": "2026-09-01",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907253/profiles/R5907253_024.nc"
+    },
+    {
+      "id": "argo-3902750",
+      "wmo": "3902750",
+      "cycle": 24,
+      "lat": 8.2282,
+      "lon": 61.5079,
+      "lastDate": "2026-09-01",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/3902750/profiles/R3902750_024.nc"
+    },
+    {
+      "id": "argo-7902200",
+      "wmo": "7902200",
+      "cycle": 77,
+      "lat": 5.9444,
+      "lon": 69.7134,
+      "lastDate": "2026-09-01",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7902200/profiles/R7902200_077.nc"
+    },
+    {
+      "id": "argo-7902385",
+      "wmo": "7902385",
+      "cycle": 23,
+      "lat": 15.7241,
+      "lon": 67.8893,
+      "lastDate": "2026-08-31",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7902385/profiles/R7902385_023.nc"
+    },
+    {
+      "id": "argo-7902251",
+      "wmo": "7902251",
+      "cycle": 61,
+      "lat": 10.35,
+      "lon": 88.85,
+      "lastDate": "2026-08-31",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7902251/profiles/R7902251_061.nc"
+    },
+    {
+      "id": "argo-7902249",
+      "wmo": "7902249",
+      "cycle": 61,
+      "lat": 13.4381,
+      "lon": 81.8804,
+      "lastDate": "2026-08-31",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7902249/profiles/R7902249_061.nc"
+    },
+    {
+      "id": "argo-4904037",
+      "wmo": "4904037",
+      "cycle": 1,
+      "lat": 14.6167,
+      "lon": 62.8667,
+      "lastDate": "2026-08-31",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/4904037/profiles/R4904037_001.nc"
+    },
+    {
+      "id": "argo-2904083",
+      "wmo": "2904083",
+      "cycle": 24,
+      "lat": 9.405,
+      "lon": 62.365,
+      "lastDate": "2026-08-31",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/2904083/profiles/R2904083_024.nc"
+    },
+    {
+      "id": "argo-2902306",
+      "wmo": "2902306",
+      "cycle": 86,
+      "lat": 21.5453,
+      "lon": 60.1069,
+      "lastDate": "2026-08-31",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/2902306/profiles/R2902306_086.nc"
+    },
+    {
+      "id": "argo-7902384",
+      "wmo": "7902384",
+      "cycle": 23,
+      "lat": 15.7123,
+      "lon": 66.3809,
+      "lastDate": "2026-08-31",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7902384/profiles/R7902384_023.nc"
+    },
+    {
+      "id": "argo-1901898",
+      "wmo": "1901898",
+      "cycle": 302,
+      "lat": 15.8038,
+      "lon": 59.7171,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/bodc/1901898/profiles/R1901898_302.nc"
+    },
+    {
+      "id": "argo-3902753",
+      "wmo": "3902753",
+      "cycle": 23,
+      "lat": 16.4431,
+      "lon": 65.5205,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/3902753/profiles/R3902753_023.nc"
+    },
+    {
+      "id": "argo-2904082",
+      "wmo": "2904082",
+      "cycle": 24,
+      "lat": 9.7833,
+      "lon": 63.1667,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/2904082/profiles/R2904082_024.nc"
+    },
+    {
+      "id": "argo-4903972",
+      "wmo": "4903972",
+      "cycle": 24,
+      "lat": 8.85,
+      "lon": 62.8333,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/4903972/profiles/R4903972_024.nc"
+    },
+    {
+      "id": "argo-6990716",
+      "wmo": "6990716",
+      "cycle": 56,
+      "lat": 11.35,
+      "lon": 67.5167,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/6990716/profiles/R6990716_056.nc"
+    },
+    {
+      "id": "argo-7902248",
+      "wmo": "7902248",
+      "cycle": 61,
+      "lat": 11.364,
+      "lon": 87.2127,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7902248/profiles/R7902248_061.nc"
+    },
+    {
+      "id": "argo-5907327",
+      "wmo": "5907327",
+      "cycle": 1,
+      "lat": 15.7667,
+      "lon": 63.1167,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907327/profiles/R5907327_001.nc"
+    },
+    {
+      "id": "argo-3902657",
+      "wmo": "3902657",
+      "cycle": 83,
+      "lat": 20.5429,
+      "lon": 64.0286,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/3902657/profiles/R3902657_083.nc"
+    },
+    {
+      "id": "argo-5907140",
+      "wmo": "5907140",
+      "cycle": 61,
+      "lat": 5.9167,
+      "lon": 82.45,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907140/profiles/R5907140_061.nc"
+    },
+    {
+      "id": "argo-6990612",
+      "wmo": "6990612",
+      "cycle": 105,
+      "lat": 13.35,
+      "lon": 67.1,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/6990612/profiles/R6990612_105.nc"
+    },
+    {
+      "id": "argo-1902751",
+      "wmo": "1902751",
+      "cycle": 140,
+      "lat": 22.2079,
+      "lon": 65.2486,
+      "lastDate": "2026-08-30",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/1902751/profiles/R1902751_140.nc"
+    },
+    {
+      "id": "argo-4903794",
+      "wmo": "4903794",
+      "cycle": 70,
+      "lat": 7.0435,
+      "lon": 84.8957,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/4903794/profiles/R4903794_070.nc"
+    },
+    {
+      "id": "argo-7901016",
+      "wmo": "7901016",
+      "cycle": 112,
+      "lat": 12.9659,
+      "lon": 60.4831,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/7901016/profiles/R7901016_112.nc"
+    },
+    {
+      "id": "argo-1902844",
+      "wmo": "1902844",
+      "cycle": 24,
+      "lat": 9.7823,
+      "lon": 65.9153,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/1902844/profiles/R1902844_024.nc"
+    },
+    {
+      "id": "argo-1902756",
+      "wmo": "1902756",
+      "cycle": 55,
+      "lat": 17.0306,
+      "lon": 56.3212,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/1902756/profiles/R1902756_055.nc"
+    },
+    {
+      "id": "argo-7901136",
+      "wmo": "7901136",
+      "cycle": 119,
+      "lat": 15.5825,
+      "lon": 68.8084,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7901136/profiles/R7901136_119.nc"
+    },
+    {
+      "id": "argo-2903434",
+      "wmo": "2903434",
+      "cycle": 86,
+      "lat": 13.0379,
+      "lon": 87.0295,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903434/profiles/R2903434_086.nc"
+    },
+    {
+      "id": "argo-4903973",
+      "wmo": "4903973",
+      "cycle": 23,
+      "lat": 16.4629,
+      "lon": 66.211,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/4903973/profiles/R4903973_023.nc"
+    },
+    {
+      "id": "argo-1902845",
+      "wmo": "1902845",
+      "cycle": 24,
+      "lat": 10.7724,
+      "lon": 68.2617,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/1902845/profiles/R1902845_024.nc"
+    },
+    {
+      "id": "argo-1902681",
+      "wmo": "1902681",
+      "cycle": 88,
+      "lat": 8.325,
+      "lon": 81.9844,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/1902681/profiles/R1902681_088.nc"
+    },
+    {
+      "id": "argo-2902768",
+      "wmo": "2902768",
+      "cycle": 239,
+      "lat": 11.985,
+      "lon": 80.625,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902768/profiles/R2902768_239.nc"
+    },
+    {
+      "id": "argo-2902770",
+      "wmo": "2902770",
+      "cycle": 238,
+      "lat": 9.044,
+      "lon": 86.224,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902770/profiles/R2902770_238.nc"
+    },
+    {
+      "id": "argo-2902772",
+      "wmo": "2902772",
+      "cycle": 238,
+      "lat": 11.354,
+      "lon": 81.393,
+      "lastDate": "2026-08-29",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/csio/2902772/profiles/R2902772_238.nc"
+    },
+    {
+      "id": "argo-7902069",
+      "wmo": "7902069",
+      "cycle": 41,
+      "lat": 13.9,
+      "lon": 84.733,
+      "lastDate": "2026-08-28",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/7902069/profiles/R7902069_041.nc"
+    },
+    {
+      "id": "argo-2903137",
+      "wmo": "2903137",
+      "cycle": 136,
+      "lat": 5.8178,
+      "lon": 49.1671,
+      "lastDate": "2026-08-28",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903137/profiles/R2903137_136.nc"
     },
     {
       "id": "argo-7902073",
@@ -433,731 +621,507 @@
       "lon": 89.271,
       "lastDate": "2026-08-28",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/7902073/profiles/R7902073_040.nc",
-      "surfaceTemp": 28.58,
-      "salinity": 26.03,
-      "d20": 96,
-      "d26": 53,
-      "profile": [
-        {
-          "depth": 5,
-          "observed": 28.58,
-          "predicted": 28.58,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 28.63,
-          "predicted": 28.63,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 28.96,
-          "predicted": 28.96,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 29.13,
-          "predicted": 29.13,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 26.47,
-          "predicted": 26.47,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 22.81,
-          "predicted": 22.81,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 19.42,
-          "predicted": 19.42,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 16.66,
-          "predicted": 16.66,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 15.28,
-          "predicted": 15.28,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/7902073/profiles/R7902073_040.nc"
     },
     {
-      "id": "argo-2903956",
-      "wmo": "2903956",
-      "cycle": 267,
-      "lat": 19.491,
-      "lon": 62.137,
-      "lastDate": "2026-09-04",
+      "id": "argo-1902755",
+      "wmo": "1902755",
+      "cycle": 50,
+      "lat": 14.5156,
+      "lon": 69.5939,
+      "lastDate": "2026-08-28",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/2903956/profiles/R2903956_267.nc",
-      "surfaceTemp": 26.6,
-      "salinity": 36.08,
-      "d20": 147,
-      "d26": 40,
-      "profile": [
-        {
-          "depth": 5,
-          "observed": 26.6,
-          "predicted": 26.6,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 26.6,
-          "predicted": 26.6,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 26.58,
-          "predicted": 26.58,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 26.5,
-          "predicted": 26.5,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 25.51,
-          "predicted": 25.51,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 24.87,
-          "predicted": 24.87,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 22.56,
-          "predicted": 22.56,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 20.77,
-          "predicted": 20.77,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 19.88,
-          "predicted": 19.88,
-          "error": 0.0
-        },
-        {
-          "depth": 200,
-          "observed": 17.82,
-          "predicted": 17.82,
-          "error": 0.0
-        },
-        {
-          "depth": 300,
-          "observed": 16.05,
-          "predicted": 16.05,
-          "error": 0.0
-        },
-        {
-          "depth": 500,
-          "observed": 13.28,
-          "predicted": 13.28,
-          "error": 0.0
-        },
-        {
-          "depth": 700,
-          "observed": 11.6,
-          "predicted": 11.6,
-          "error": 0.0
-        },
-        {
-          "depth": 1000,
-          "observed": 9.39,
-          "predicted": 9.39,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/1902755/profiles/R1902755_050.nc"
     },
     {
-      "id": "argo-5907141",
-      "wmo": "5907141",
-      "cycle": 250,
-      "lat": 25.411,
-      "lon": 58.415,
-      "lastDate": "2026-09-04",
+      "id": "argo-5907167",
+      "wmo": "5907167",
+      "cycle": 50,
+      "lat": 14.5156,
+      "lon": 69.5939,
+      "lastDate": "2026-08-28",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/5907141/profiles/R5907141_250.nc",
-      "surfaceTemp": 32.02,
-      "salinity": 37.01,
-      "d20": null,
-      "d26": 44,
-      "profile": [
-        {
-          "depth": 5,
-          "observed": 32.02,
-          "predicted": 32.02,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 31.85,
-          "predicted": 31.85,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 31.19,
-          "predicted": 31.19,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 31.11,
-          "predicted": 31.11,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 23.75,
-          "predicted": 23.75,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 22.07,
-          "predicted": 22.07,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 21.79,
-          "predicted": 21.79,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/5907167/profiles/R5907167_050.nc"
     },
     {
-      "id": "argo-2903955",
-      "wmo": "2903955",
-      "cycle": 249,
-      "lat": 23.365,
-      "lon": 61.085,
-      "lastDate": "2026-09-04",
+      "id": "argo-5907092",
+      "wmo": "5907092",
+      "cycle": 117,
+      "lat": 13.8501,
+      "lon": 62.4291,
+      "lastDate": "2026-08-28",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/2903955/profiles/R2903955_249.nc",
-      "surfaceTemp": 25.57,
-      "salinity": 36.31,
-      "d20": 184,
-      "d26": null,
-      "profile": [
-        {
-          "depth": 5,
-          "observed": 25.57,
-          "predicted": 25.57,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 25.55,
-          "predicted": 25.55,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 23.96,
-          "predicted": 23.96,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 23.76,
-          "predicted": 23.76,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 23.11,
-          "predicted": 23.11,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 22.37,
-          "predicted": 22.37,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 21.26,
-          "predicted": 21.26,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 21.05,
-          "predicted": 21.05,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 20.6,
-          "predicted": 20.6,
-          "error": 0.0
-        },
-        {
-          "depth": 200,
-          "observed": 19.71,
-          "predicted": 19.71,
-          "error": 0.0
-        },
-        {
-          "depth": 300,
-          "observed": 15.84,
-          "predicted": 15.84,
-          "error": 0.0
-        },
-        {
-          "depth": 500,
-          "observed": 12.87,
-          "predicted": 12.87,
-          "error": 0.0
-        },
-        {
-          "depth": 700,
-          "observed": 11.56,
-          "predicted": 11.56,
-          "error": 0.0
-        },
-        {
-          "depth": 1000,
-          "observed": 9.07,
-          "predicted": 9.07,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907092/profiles/R5907092_117.nc"
     },
     {
-      "id": "argo-6990700",
-      "wmo": "6990700",
-      "cycle": 70,
-      "lat": 24.174,
-      "lon": 58.234,
-      "lastDate": "2026-09-04",
+      "id": "argo-1902373",
+      "wmo": "1902373",
+      "cycle": 80,
+      "lat": 14.2106,
+      "lon": 91.8534,
+      "lastDate": "2026-08-28",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/6990700/profiles/R6990700_070.nc",
-      "surfaceTemp": 31.77,
-      "salinity": null,
-      "d20": 138,
-      "d26": 37,
-      "profile": [
-        {
-          "depth": 5,
-          "observed": 31.77,
-          "predicted": 31.77,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 31.7,
-          "predicted": 31.7,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 31.4,
-          "predicted": 31.4,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 27.3,
-          "predicted": 27.3,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 23.71,
-          "predicted": 23.71,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 22.58,
-          "predicted": 22.58,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 22.42,
-          "predicted": 22.42,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 21.13,
-          "predicted": 21.13,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 19.02,
-          "predicted": 19.02,
-          "error": 0.0
-        },
-        {
-          "depth": 200,
-          "observed": 16.82,
-          "predicted": 16.82,
-          "error": 0.0
-        },
-        {
-          "depth": 300,
-          "observed": 15.1,
-          "predicted": 15.1,
-          "error": 0.0
-        },
-        {
-          "depth": 500,
-          "observed": 12.76,
-          "predicted": 12.76,
-          "error": 0.0
-        },
-        {
-          "depth": 700,
-          "observed": 11.0,
-          "predicted": 11.0,
-          "error": 0.0
-        },
-        {
-          "depth": 1000,
-          "observed": 8.65,
-          "predicted": 8.65,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/1902373/profiles/R1902373_080.nc"
     },
     {
-      "id": "argo-5907326",
-      "wmo": "5907326",
+      "id": "argo-6990514",
+      "wmo": "6990514",
+      "cycle": 148,
+      "lat": 15.241,
+      "lon": 62.5197,
+      "lastDate": "2026-08-28",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/6990514/profiles/R6990514_148.nc"
+    },
+    {
+      "id": "argo-4903660",
+      "wmo": "4903660",
+      "cycle": 148,
+      "lat": 16.4237,
+      "lon": 62.3094,
+      "lastDate": "2026-08-28",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/4903660/profiles/R4903660_148.nc"
+    },
+    {
+      "id": "argo-3902755",
+      "wmo": "3902755",
+      "cycle": 23,
+      "lat": 15.0537,
+      "lon": 63.082,
+      "lastDate": "2026-08-28",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/3902755/profiles/R3902755_023.nc"
+    },
+    {
+      "id": "argo-2903831",
+      "wmo": "2903831",
+      "cycle": 63,
+      "lat": 17.5149,
+      "lon": 89.3927,
+      "lastDate": "2026-08-27",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903831/profiles/R2903831_063.nc"
+    },
+    {
+      "id": "argo-2903138",
+      "wmo": "2903138",
+      "cycle": 136,
+      "lat": 6.1669,
+      "lon": 64.1538,
+      "lastDate": "2026-08-27",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903138/profiles/R2903138_136.nc"
+    },
+    {
+      "id": "argo-1902660",
+      "wmo": "1902660",
+      "cycle": 76,
+      "lat": 24.2009,
+      "lon": 61.8229,
+      "lastDate": "2026-08-27",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/1902660/profiles/R1902660_076.nc"
+    },
+    {
+      "id": "argo-4904036",
+      "wmo": "4904036",
       "cycle": 1,
-      "lat": 19.785,
-      "lon": 64.955,
-      "lastDate": "2026-09-04",
+      "lat": 13.4833,
+      "lon": 63.5167,
+      "lastDate": "2026-08-27",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907326/profiles/R5907326_001.nc",
-      "surfaceTemp": 27.0,
-      "salinity": 36.46,
-      "d20": 382,
-      "d26": 77,
-      "profile": [
-        {
-          "depth": 0,
-          "observed": 27.0,
-          "predicted": 27.0,
-          "error": 0.0
-        },
-        {
-          "depth": 5,
-          "observed": 27.0,
-          "predicted": 27.0,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 27.0,
-          "predicted": 27.0,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 27.0,
-          "predicted": 27.0,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 26.92,
-          "predicted": 26.92,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 26.53,
-          "predicted": 26.53,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 26.04,
-          "predicted": 26.04,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 25.54,
-          "predicted": 25.54,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 25.05,
-          "predicted": 25.05,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 24.56,
-          "predicted": 24.56,
-          "error": 0.0
-        },
-        {
-          "depth": 200,
-          "observed": 23.58,
-          "predicted": 23.58,
-          "error": 0.0
-        },
-        {
-          "depth": 300,
-          "observed": 21.61,
-          "predicted": 21.61,
-          "error": 0.0
-        },
-        {
-          "depth": 500,
-          "observed": 17.68,
-          "predicted": 17.68,
-          "error": 0.0
-        },
-        {
-          "depth": 700,
-          "observed": 13.74,
-          "predicted": 13.74,
-          "error": 0.0
-        },
-        {
-          "depth": 1000,
-          "observed": 8.83,
-          "predicted": 8.83,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/4904036/profiles/R4904036_001.nc"
     },
     {
-      "id": "argo-1902594",
-      "wmo": "1902594",
-      "cycle": 125,
-      "lat": 9.112,
-      "lon": 86.795,
-      "lastDate": "2026-09-03",
+      "id": "argo-2903140",
+      "wmo": "2903140",
+      "cycle": 136,
+      "lat": 7.4852,
+      "lon": 68.4689,
+      "lastDate": "2026-08-27",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/coriolis/1902594/profiles/R1902594_125.nc",
-      "surfaceTemp": 29.38,
-      "salinity": null,
-      "d20": 139,
-      "d26": 79,
-      "profile": [
-        {
-          "depth": 5,
-          "observed": 29.38,
-          "predicted": 29.38,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 29.39,
-          "predicted": 29.39,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 28.55,
-          "predicted": 28.55,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 27.99,
-          "predicted": 27.99,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 27.79,
-          "predicted": 27.79,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 26.41,
-          "predicted": 26.41,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 24.02,
-          "predicted": 24.02,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 21.69,
-          "predicted": 21.69,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 18.72,
-          "predicted": 18.72,
-          "error": 0.0
-        },
-        {
-          "depth": 200,
-          "observed": 14.46,
-          "predicted": 14.46,
-          "error": 0.0
-        },
-        {
-          "depth": 300,
-          "observed": 12.09,
-          "predicted": 12.09,
-          "error": 0.0
-        },
-        {
-          "depth": 500,
-          "observed": 10.25,
-          "predicted": 10.25,
-          "error": 0.0
-        },
-        {
-          "depth": 700,
-          "observed": 8.59,
-          "predicted": 8.59,
-          "error": 0.0
-        },
-        {
-          "depth": 1000,
-          "observed": 6.55,
-          "predicted": 6.55,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/2903140/profiles/R2903140_136.nc"
     },
     {
-      "id": "argo-3902754",
-      "wmo": "3902754",
-      "cycle": 24,
-      "lat": 13.321,
-      "lon": 62.4,
-      "lastDate": "2026-09-03",
+      "id": "argo-5907152",
+      "wmo": "5907152",
+      "cycle": 40,
+      "lat": 16.43,
+      "lon": 91.8646,
+      "lastDate": "2026-08-26",
       "source": "Argovis / IFREMER GDAC",
-      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/3902754/profiles/R3902754_024.nc",
-      "surfaceTemp": 27.3,
-      "salinity": 36.02,
-      "d20": 183,
-      "d26": 111,
-      "profile": [
-        {
-          "depth": 5,
-          "observed": 27.3,
-          "predicted": 27.3,
-          "error": 0.0
-        },
-        {
-          "depth": 10,
-          "observed": 27.31,
-          "predicted": 27.31,
-          "error": 0.0
-        },
-        {
-          "depth": 20,
-          "observed": 27.31,
-          "predicted": 27.31,
-          "error": 0.0
-        },
-        {
-          "depth": 30,
-          "observed": 27.31,
-          "predicted": 27.31,
-          "error": 0.0
-        },
-        {
-          "depth": 50,
-          "observed": 27.31,
-          "predicted": 27.31,
-          "error": 0.0
-        },
-        {
-          "depth": 75,
-          "observed": 27.32,
-          "predicted": 27.32,
-          "error": 0.0
-        },
-        {
-          "depth": 100,
-          "observed": 27.22,
-          "predicted": 27.22,
-          "error": 0.0
-        },
-        {
-          "depth": 125,
-          "observed": 24.48,
-          "predicted": 24.48,
-          "error": 0.0
-        },
-        {
-          "depth": 150,
-          "observed": 23.05,
-          "predicted": 23.05,
-          "error": 0.0
-        },
-        {
-          "depth": 200,
-          "observed": 18.47,
-          "predicted": 18.47,
-          "error": 0.0
-        },
-        {
-          "depth": 300,
-          "observed": 14.27,
-          "predicted": 14.27,
-          "error": 0.0
-        },
-        {
-          "depth": 500,
-          "observed": 12.05,
-          "predicted": 12.05,
-          "error": 0.0
-        },
-        {
-          "depth": 700,
-          "observed": 10.85,
-          "predicted": 10.85,
-          "error": 0.0
-        },
-        {
-          "depth": 1000,
-          "observed": 8.58,
-          "predicted": 8.58,
-          "error": 0.0
-        }
-      ]
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/aoml/5907152/profiles/R5907152_040.nc"
+    },
+    {
+      "id": "argo-4903776",
+      "wmo": "4903776",
+      "cycle": 108,
+      "lat": 10.8667,
+      "lon": 88.8667,
+      "lastDate": "2026-08-26",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/4903776/profiles/R4903776_108.nc"
+    },
+    {
+      "id": "argo-7901126",
+      "wmo": "7901126",
+      "cycle": 108,
+      "lat": 13.5855,
+      "lon": 91.7749,
+      "lastDate": "2026-08-26",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7901126/profiles/R7901126_108.nc"
+    },
+    {
+      "id": "argo-2904142",
+      "wmo": "2904142",
+      "cycle": 1,
+      "lat": 11.7,
+      "lon": 62.85,
+      "lastDate": "2026-08-26",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/2904142/profiles/R2904142_001.nc"
+    },
+    {
+      "id": "argo-7901128",
+      "wmo": "7901128",
+      "cycle": 106,
+      "lat": 15.8167,
+      "lon": 65.0167,
+      "lastDate": "2026-08-25",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/7901128/profiles/R7901128_106.nc"
+    },
+    {
+      "id": "argo-1902672",
+      "wmo": "1902672",
+      "cycle": 106,
+      "lat": 17.6464,
+      "lon": 64.6664,
+      "lastDate": "2026-08-25",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/1902672/profiles/R1902672_106.nc"
+    },
+    {
+      "id": "argo-5907084",
+      "wmo": "5907084",
+      "cycle": 106,
+      "lat": 17.45,
+      "lon": 65.2833,
+      "lastDate": "2026-08-25",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": "ftp://ftp.ifremer.fr/ifremer/argo/dac/incois/5907084/profiles/R5907084_106.nc"
+    },
+    {
+      "id": "argo-1902671",
+      "wmo": "1902671",
+      "cycle": 106,
+      "lat": 17.9667,
+      "lon": 69.15,
+      "lastDate": "2026-08-24",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-2902766",
+      "wmo": "2902766",
+      "cycle": 247,
+      "lat": 17.784,
+      "lon": 90.17,
+      "lastDate": "2026-08-24",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-5907086",
+      "wmo": "5907086",
+      "cycle": 88,
+      "lat": 5.7065,
+      "lon": 86.1906,
+      "lastDate": "2026-08-24",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-3902669",
+      "wmo": "3902669",
+      "cycle": 56,
+      "lat": 17.8333,
+      "lon": 63.95,
+      "lastDate": "2026-08-22",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-2903989",
+      "wmo": "2903989",
+      "cycle": 56,
+      "lat": 10.6,
+      "lon": 83.6833,
+      "lastDate": "2026-08-22",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-5907085",
+      "wmo": "5907085",
+      "cycle": 104,
+      "lat": 8.3667,
+      "lon": 68.5333,
+      "lastDate": "2026-08-22",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-1902862",
+      "wmo": "1902862",
+      "cycle": 17,
+      "lat": 6.6167,
+      "lon": 74.0,
+      "lastDate": "2026-08-22",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-7902287",
+      "wmo": "7902287",
+      "cycle": 55,
+      "lat": 9.4514,
+      "lon": 69.8363,
+      "lastDate": "2026-08-22",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-1902670",
+      "wmo": "1902670",
+      "cycle": 107,
+      "lat": 11.4377,
+      "lon": 80.7185,
+      "lastDate": "2026-08-21",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-1902673",
+      "wmo": "1902673",
+      "cycle": 104,
+      "lat": 11.9221,
+      "lon": 70.6354,
+      "lastDate": "2026-08-21",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-4903777",
+      "wmo": "4903777",
+      "cycle": 94,
+      "lat": 8.5667,
+      "lon": 64.7,
+      "lastDate": "2026-08-18",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-4903869",
+      "wmo": "4903869",
+      "cycle": 54,
+      "lat": 18.05,
+      "lon": 88.25,
+      "lastDate": "2026-08-18",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-2903892",
+      "wmo": "2903892",
+      "cycle": 107,
+      "lat": 14.9306,
+      "lon": 86.7995,
+      "lastDate": "2026-08-18",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-5907171",
+      "wmo": "5907171",
+      "cycle": 55,
+      "lat": 13.0333,
+      "lon": 85.9833,
+      "lastDate": "2026-08-18",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-6990608",
+      "wmo": "6990608",
+      "cycle": 121,
+      "lat": 7.9,
+      "lon": 85.9167,
+      "lastDate": "2026-08-18",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-5907180",
+      "wmo": "5907180",
+      "cycle": 55,
+      "lat": 17.0,
+      "lon": 70.6833,
+      "lastDate": "2026-08-18",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-7901127",
+      "wmo": "7901127",
+      "cycle": 107,
+      "lat": 11.7167,
+      "lon": 91.45,
+      "lastDate": "2026-08-17",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-6990705",
+      "wmo": "6990705",
+      "cycle": 54,
+      "lat": 7.6958,
+      "lon": 84.441,
+      "lastDate": "2026-08-17",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-6990609",
+      "wmo": "6990609",
+      "cycle": 107,
+      "lat": 7.7167,
+      "lon": 83.2833,
+      "lastDate": "2026-08-17",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-6990611",
+      "wmo": "6990611",
+      "cycle": 105,
+      "lat": 20.8833,
+      "lon": 67.5167,
+      "lastDate": "2026-08-17",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-6990610",
+      "wmo": "6990610",
+      "cycle": 105,
+      "lat": 21.5987,
+      "lon": 63.5214,
+      "lastDate": "2026-08-15",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-7901125",
+      "wmo": "7901125",
+      "cycle": 107,
+      "lat": 14.8333,
+      "lon": 92.1667,
+      "lastDate": "2026-08-15",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-4903775",
+      "wmo": "4903775",
+      "cycle": 107,
+      "lat": 14.7,
+      "lon": 88.3,
+      "lastDate": "2026-08-14",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-1902669",
+      "wmo": "1902669",
+      "cycle": 107,
+      "lat": 17.0167,
+      "lon": 88.3333,
+      "lastDate": "2026-08-14",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-5907179",
+      "wmo": "5907179",
+      "cycle": 54,
+      "lat": 10.5,
+      "lon": 61.9,
+      "lastDate": "2026-08-10",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-1902289",
+      "wmo": "1902289",
+      "cycle": 74,
+      "lat": 5.8257,
+      "lon": 67.4429,
+      "lastDate": "2026-08-10",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-7902070",
+      "wmo": "7902070",
+      "cycle": 38,
+      "lat": 19.442,
+      "lon": 89.664,
+      "lastDate": "2026-08-09",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-2903988",
+      "wmo": "2903988",
+      "cycle": 57,
+      "lat": 14.2,
+      "lon": 88.45,
+      "lastDate": "2026-08-09",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-3902573",
+      "wmo": "3902573",
+      "cycle": 93,
+      "lat": 11.0,
+      "lon": 70.6333,
+      "lastDate": "2026-08-09",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-1902757",
+      "wmo": "1902757",
+      "cycle": 80,
+      "lat": 22.196,
+      "lon": 63.5292,
+      "lastDate": "2026-08-08",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
+    },
+    {
+      "id": "argo-2903891",
+      "wmo": "2903891",
+      "cycle": 106,
+      "lat": 12.9333,
+      "lon": 89.8167,
+      "lastDate": "2026-08-06",
+      "source": "Argovis / IFREMER GDAC",
+      "profileUrl": null
     }
   ]
 }

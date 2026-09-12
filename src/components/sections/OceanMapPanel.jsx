@@ -12,6 +12,7 @@ import {
 import { REAL_ARGO_FLOATS } from '../../lib/realOceanData'
 import { CYCLONES, isOcean, reconstructProfile, transectSegments } from '../../lib/nioField'
 import { OceanFillLayer } from '../map/OceanFillLayer'
+import BasinGuideLayers, { BasinGuideLegend } from '../map/BasinGuideLayers'
 import { heatmapLegendGradient } from '../map/OceanHeatmapLayers'
 
 function MapClickPin({ onPick }) {
@@ -107,6 +108,7 @@ function NioMap({
         vmin={meta.min}
         vmax={meta.max}
       />
+      <BasinGuideLayers showObs showExample onPin={onPin} />
       {onPin && <MapClickPin onPick={onPin} />}
       <MapControls showZoom showCompass showFullscreen position="bottom-right" />
       {cuts.map((seg, i) => (
@@ -130,7 +132,7 @@ function NioMap({
           interactive={false}
         />
       ))}
-      {showArgo && onPin && <ArgoMarkers dateId={dateId} depth={depth} onPin={onPin} />}
+      {false && showArgo && onPin && <ArgoMarkers dateId={dateId} depth={depth} onPin={onPin} />}
       {pin && isOcean(pin.lat, pin.lon) && (
         <MapMarker longitude={pin.lon} latitude={pin.lat}>
           <MarkerContent>
@@ -154,7 +156,7 @@ export default function OceanMapPanel({
   thetaAtDepth,
 }) {
   const title = useMemo(() => {
-    if (view === 'cyclone') return 'Evaporation · cyclone tracks'
+    if (view === 'cyclone') return 'TCHP from OceanUNet · IBTrACS track'
     if (view === 'plates') return 'Sea surface temperature'
     if (layerId === 'theta') return `OceanEmbed θ · ${depth} m`
     return meta?.label || layerId
@@ -187,6 +189,7 @@ export default function OceanMapPanel({
             pitch={26}
             zoom={3.5}
           />
+          <BasinGuideLegend />
           <div className="ocean-map-card">
             <p className="text-foreground text-sm font-medium">Satellite SST</p>
             <p className="text-muted-foreground mt-1 text-[10px] tracking-[0.12em] uppercase">Skin · 0 m</p>
@@ -206,6 +209,7 @@ export default function OceanMapPanel({
             pitch={26}
             zoom={3.5}
           />
+          <BasinGuideLegend />
           <div className="ocean-map-card">
             <p className="text-foreground text-sm font-medium">OceanEmbed θ · {depth} m</p>
             <p className="text-muted-foreground mt-1 text-[10px] tracking-[0.12em] uppercase">
@@ -227,12 +231,13 @@ export default function OceanMapPanel({
         pin={pin}
         onPin={onPin}
         meta={activeMeta}
-        showCyclones={view === 'cyclone' || view === 'live'}
+        showCyclones={false}
         showTransect={view === 'cut'}
         showArgo
         pitch={globe ? 26 : 0}
         zoom={globe ? 3.7 : 4.35}
       />
+      <BasinGuideLegend />
       <div className="ocean-map-card">
         <p className="text-foreground text-sm font-medium">{title}</p>
         <p className="text-muted-foreground mt-1 text-[10px] tracking-[0.12em] uppercase">
