@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { REAL_ARGO_FLOATS, getRealScatterData, DEPTH_RESOLVED_METRICS, MODEL_FAILURE, MODEL_METRICS } from '../../lib/realOceanData'
+import { getRealScatterData, DEPTH_RESOLVED_METRICS, MODEL_METRICS } from '../../lib/realOceanData'
 import {
   ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip,
   ResponsiveContainer, LineChart, Line, ReferenceLine, ReferenceArea,
@@ -7,7 +7,6 @@ import {
 import { SectionHead } from '../ui'
 
 export default function ValidationSection() {
-  const [selected, setSelected] = useState(REAL_ARGO_FLOATS[0])
   const [metric, setMetric] = useState('rmse')
   const all = useMemo(() => getRealScatterData(), [])
   const active = all
@@ -90,53 +89,6 @@ export default function ValidationSection() {
               </LineChart>
             </ResponsiveContainer>
           </figure>
-        </div>
-
-        <div className="lede" style={{ margin: '28px 0 12px', maxWidth: 720 }}>
-          <p className="kicker" style={{ marginBottom: 8 }}>Why it fails the persistence test</p>
-          <h3 style={{ marginBottom: 10 }}>{MODEL_FAILURE.headline}</h3>
-          <ul style={{ margin: 0, paddingLeft: 18, color: '#5a5e56', fontSize: '0.95rem' }}>
-            {MODEL_FAILURE.why.map((line) => (
-              <li key={line} style={{ marginBottom: 6 }}>{line}</li>
-            ))}
-          </ul>
-          <p style={{ marginTop: 12, fontSize: '0.88rem', color: '#5a5e56' }}>{MODEL_FAILURE.not_a_forecast}</p>
-        </div>
-
-        <div className="float-row">
-          {REAL_ARGO_FLOATS.map((f) => (
-            <button key={f.id} className={selected.id === f.id ? 'active' : ''} onClick={() => setSelected(f)}>
-              WMO {f.wmo} · {f.basin}
-            </button>
-          ))}
-        </div>
-
-        <div className="telemetry">
-          <div>
-            <span>Platform</span>
-            <strong>{selected.model}</strong>
-            <div style={{ fontSize: '0.8rem', color: '#5a5e56', marginTop: 2 }}>{selected.sensor}</div>
-          </div>
-          <div>
-            <span>Position</span>
-            <strong>{selected.lat}°N, {selected.lon}°E</strong>
-            <div style={{ fontSize: '0.8rem', color: '#5a5e56', marginTop: 2 }}>{selected.basin}</div>
-          </div>
-          <div>
-            <span>Cycle</span>
-            <strong>#{selected.cycles}</strong>
-            <div style={{ fontSize: '0.8rem', color: '#5a5e56', marginTop: 2 }}>{selected.lastDate}</div>
-          </div>
-          <div>
-            <span>SST / D20</span>
-            <strong>{selected.surfaceTemp} °C</strong>
-            <div style={{ fontSize: '0.8rem', color: '#5a5e56', marginTop: 2 }}>{selected.d20} m</div>
-          </div>
-          <div>
-            <span>Station skill</span>
-            <strong>{selected.floatRMSE} °C</strong>
-            <div style={{ fontSize: '0.8rem', color: '#5a5e56', marginTop: 2 }}>R {selected.floatCorr}</div>
-          </div>
         </div>
       </div>
     </section>

@@ -1055,53 +1055,6 @@ button { font-family: inherit; }
   border-color: #16191f;
 }
 
-.float-row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 20px;
-}
-
-.float-row button {
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.72rem;
-  padding: 8px 12px;
-  background: transparent;
-  border: 1px solid rgba(22, 25, 31, 0.14);
-  cursor: pointer;
-  color: #5a5e56;
-}
-
-.float-row button.active {
-  border-color: #c45c26;
-  color: #c45c26;
-}
-
-.telemetry {
-  margin-top: 16px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
-  padding: 20px 0 0;
-  border-top: 1px solid rgba(22, 25, 31, 0.12);
-}
-
-.telemetry span {
-  display: block;
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.58rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: #5a5e56;
-  margin-bottom: 4px;
-}
-
-.telemetry strong {
-  font-family: "Source Serif 4", Georgia, serif;
-  font-weight: 400;
-  font-size: 1.05rem;
-}
-
 /* ── Models ────────────────────────────────────────────── */
 .model-feature {
   display: grid;
@@ -1670,17 +1623,6 @@ button { font-family: inherit; }
   font-size: 1.05rem;
 }
 
-.biblio {
-  margin-top: 40px;
-  font-size: 0.78rem;
-  color: rgba(239, 232, 220, 0.45);
-  line-height: 1.7;
-  max-width: 72rem;
-}
-
-.biblio a { color: #c4a574; text-decoration: none; }
-.biblio a:hover { text-decoration: underline; }
-
 /* ── Tooltip ───────────────────────────────────────────── */
 .tip {
   background: #f1ebe1;
@@ -1714,7 +1656,6 @@ button { font-family: inherit; }
   .method::before { display: none; }
   .impact-list li { grid-template-columns: 48px 1fr; }
   .impact-list p { grid-column: 2; }
-  .telemetry { grid-template-columns: 1fr 1fr; }
   .sources { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .nav-links.open {
