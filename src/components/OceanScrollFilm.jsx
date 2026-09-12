@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react'
 
-const VIDEO_SRC = '/ocean-dive.mp4'
-const POSTER_SRC = '/ocean-poster.png'
+import { publicUrl } from '../lib/cdn'
+
+const VIDEO_SRC = publicUrl('/ocean.mp4')
+const POSTER_SRC = publicUrl('/ocean-poster.png')
 
 function clamp01(v) {
   return Math.max(0, Math.min(1, v))

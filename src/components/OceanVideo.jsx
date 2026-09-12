@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { publicUrl } from '../lib/cdn'
 
 export default function OceanVideo({ progress = 0 }) {
   const videoRef = useRef(null)
@@ -74,18 +75,18 @@ export default function OceanVideo({ progress = 0 }) {
 
   return (
     <div className="hero-film">
-      <img className="hero-film-poster" src="/ocean-poster.png" alt="" aria-hidden="true" />
+      <img className="hero-film-poster" src={publicUrl('/ocean-poster.png')} alt="" aria-hidden="true" />
       <video
         ref={videoRef}
         className="hero-film-video"
-        src="/ocean.mp4"
-        poster="/ocean-poster.png"
+        src={publicUrl('/ocean.mp4')}
+        poster={publicUrl('/ocean-poster.png')}
         muted
         playsInline
         preload="auto"
         aria-hidden="true"
       />
-      <audio ref={audioRef} src="/ocean-audio.m4a" loop preload="auto" />
+      <audio ref={audioRef} src={publicUrl('/ocean-audio.m4a')} loop preload="auto" />
       <button
         type="button"
         className={`sound-toggle${soundOn ? ' on' : ''}`}

@@ -1,4 +1,5 @@
 import LITE from './oceanembedLite.json'
+import { publicUrl } from './cdn'
 
 /** Mutable store: lite metadata first, full grids after fetch. */
 export const MODEL = { ...LITE }
@@ -16,8 +17,16 @@ export function onModelGridReady(fn) {
 
 export async function loadOceanGrid() {
   if (modelGridReady()) return MODEL
-  const res = await fetch('/data/oceanembed_model.json', { cache: 'force-cache' })
-  if (!res.ok) throw new Error(`oceanembed_model.json ${res.status}`)
+  const urls = ['/data/oceanembed_model.json', publicUrl('/data/oceanembed_model.json')]
+  let res
+  for (const url of urls) {
+    try {
+      res = await fetch(url, { cache: 'force-cache' })
+      if (res.ok) break
+    } catch { /* try next */ }
+    res = null
+  }
+  if (!res || !res.ok) throw new Error(`oceanembed_model.json ${res && res.status}`)
   const full = await res.json()
   Object.assign(MODEL, full)
   waiters.splice(0).forEach((fn) => fn())

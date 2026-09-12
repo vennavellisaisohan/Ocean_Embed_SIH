@@ -3,6 +3,7 @@ import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import * as THREE from 'three'
 import { Water } from 'three/examples/jsm/objects/Water.js'
 import { Sky } from 'three/examples/jsm/objects/Sky.js'
+import { publicUrl } from '../../lib/cdn'
 
 const SUN_ELEVATION = 48
 const SUN_AZIMUTH = 85
@@ -17,7 +18,7 @@ function setSunVector(target) {
 function OceanWorld({ progressRef, onReady }) {
   const { gl, scene } = useThree()
   const sun = useMemo(() => setSunVector(new THREE.Vector3()), [])
-  const normals = useLoader(THREE.TextureLoader, '/waternormals.jpg')
+  const normals = useLoader(THREE.TextureLoader, publicUrl('/waternormals.jpg'))
   const readyOnce = useRef(false)
 
   const water = useMemo(() => {
