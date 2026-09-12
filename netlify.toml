@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback (hash routes still work; this covers /data and deep links)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
