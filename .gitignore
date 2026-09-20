@@ -2,6 +2,7 @@
 node_modules/
 dist/
 dist-ssr/
+dist.zip
 *.local
 
 # Python / scientific workspace (not part of this website repo)
@@ -33,6 +34,9 @@ pnpm-debug.log*
 
 # Netlify CLI link state (never commit)
 .netlify/
+
+# Local duplicate of public/ocean.mp4 (byte-identical, not needed in repo)
+public/oceanvideo.mp4
 
 # Editor
 .vscode/*
