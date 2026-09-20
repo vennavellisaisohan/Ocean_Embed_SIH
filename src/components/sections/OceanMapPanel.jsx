@@ -85,8 +85,8 @@ function NioMap({
   showArgo,
   showTransect,
   pitch = 0,
-  zoom = 4.1,
-  center = [76, 14],
+  zoom = 3.55,
+  center = [80.0, 23.5],
 }) {
   const cuts = showTransect && pin ? transectSegments(pin.lat) : []
   return (
@@ -154,6 +154,7 @@ export default function OceanMapPanel({
   onPin,
   meta,
   thetaAtDepth,
+  surface,
 }) {
   const title = useMemo(() => {
     if (view === 'cyclone') return 'TCHP from OceanUNet · IBTrACS track'
@@ -169,7 +170,7 @@ export default function OceanMapPanel({
       ? { min: 24, max: 32, unit: '°C' }
       : meta
 
-  const globe = view === 'live' || view === 'globe' || view === 'cyclone'
+  const globe = view === 'globe'
   const projection = globe ? { type: 'globe' } : { type: 'mercator' }
 
   if (view === 'globe') {
@@ -186,8 +187,9 @@ export default function OceanMapPanel({
             meta={{ min: 24, max: 32, unit: '°C' }}
             showCyclones={false}
             showArgo
-            pitch={26}
-            zoom={3.5}
+            pitch={0}
+            zoom={3.2}
+            center={[80.0, 23.5]}
           />
           <BasinGuideLegend />
           <div className="ocean-map-card">
@@ -206,8 +208,9 @@ export default function OceanMapPanel({
             meta={{ min: 6, max: 31, unit: '°C' }}
             showCyclones={false}
             showArgo
-            pitch={26}
-            zoom={3.5}
+            pitch={0}
+            zoom={3.2}
+            center={[80.0, 23.5]}
           />
           <BasinGuideLegend />
           <div className="ocean-map-card">
@@ -234,8 +237,9 @@ export default function OceanMapPanel({
         showCyclones={false}
         showTransect={view === 'cut'}
         showArgo
-        pitch={globe ? 26 : 0}
-        zoom={globe ? 3.7 : 4.35}
+        pitch={0}
+        zoom={globe ? 3.2 : 3.55}
+        center={[80.0, 23.5]}
       />
       <BasinGuideLegend />
       <div className="ocean-map-card">

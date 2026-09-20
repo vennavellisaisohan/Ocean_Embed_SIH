@@ -1,0 +1,99 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Line of Control (LoC)",
+        "type": "Military Demarcation Line",
+        "agreement": "Simla Agreement 1972",
+        "status": "Line of Control (de facto military control line, sovereign territory within India)"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            74.33,
+            32.78
+          ],
+          [
+            74.28,
+            32.95
+          ],
+          [
+            74.18,
+            33.12
+          ],
+          [
+            74.08,
+            33.35
+          ],
+          [
+            74.02,
+            33.55
+          ],
+          [
+            74.1,
+            33.72
+          ],
+          [
+            74.05,
+            33.9
+          ],
+          [
+            74.02,
+            34.08
+          ],
+          [
+            73.88,
+            34.25
+          ],
+          [
+            73.82,
+            34.42
+          ],
+          [
+            73.92,
+            34.62
+          ],
+          [
+            74.25,
+            34.68
+          ],
+          [
+            74.55,
+            34.72
+          ],
+          [
+            74.92,
+            34.7
+          ],
+          [
+            75.3,
+            34.65
+          ],
+          [
+            75.75,
+            34.6
+          ],
+          [
+            76.18,
+            34.7
+          ],
+          [
+            76.55,
+            34.82
+          ],
+          [
+            76.85,
+            34.92
+          ],
+          [
+            77.0,
+            35.0
+          ]
+        ]
+      }
+    }
+  ]
+}

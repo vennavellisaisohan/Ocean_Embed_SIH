@@ -7,6 +7,7 @@ export default function OceanVideo({ progress = 0 }) {
   const progressRef = useRef(progress)
   progressRef.current = progress
   const [soundOn, setSoundOn] = useState(true)
+  const [videoSrc, setVideoSrc] = useState('/oceanvideo.mp4')
 
   useEffect(() => {
     const video = videoRef.current
@@ -73,18 +74,27 @@ export default function OceanVideo({ progress = 0 }) {
     else audio.pause()
   }
 
+  const handleVideoError = () => {
+    if (videoSrc === '/oceanvideo.mp4') {
+      setVideoSrc('/ocean.mp4')
+    } else if (videoSrc === '/ocean.mp4') {
+      setVideoSrc(publicUrl('/ocean.mp4'))
+    }
+  }
+
   return (
     <div className="hero-film">
       <img className="hero-film-poster" src={publicUrl('/ocean-poster.png')} alt="" aria-hidden="true" />
       <video
         ref={videoRef}
         className="hero-film-video"
-        src={publicUrl('/ocean.mp4')}
+        src={videoSrc}
         poster={publicUrl('/ocean-poster.png')}
         muted
         playsInline
         preload="auto"
         aria-hidden="true"
+        onError={handleVideoError}
       />
       <audio ref={audioRef} src={publicUrl('/ocean-audio.m4a')} loop preload="auto" />
       <button

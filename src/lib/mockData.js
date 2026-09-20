@@ -26,13 +26,13 @@ export const REGIONS = {
 };
 
 export const INPUT_CATALOG = [
-  { variable: 'SST', source: 'GHRSST / OSTIA L4', native: '0.05° daily', harmonized: '0.25° daily', role: 'Input', note: 'Cloud-masked gaps inpainted' },
-  { variable: 'SSS', source: 'SMAP / SMOS L3', native: '0.25° 8-day', harmonized: '0.25° daily', role: 'Input', note: 'RFI gaps filled; 8-day → daily' },
-  { variable: 'SSH / SLA', source: 'CMEMS SEALEVEL_GLO', native: '0.25° daily', harmonized: '0.25° daily', role: 'Input', note: 'Multi-altimeter constellation' },
-  { variable: 'Currents U, V', source: 'OSCAR / GlobCurrent', native: '0.25° 5-day', harmonized: '0.25° daily', role: 'Input', note: 'Geostrophic; Ekman on equator' },
-  { variable: 'Winds U, V', source: 'CCMP / ERA5', native: '0.25° 6-hourly', harmonized: '0.25° daily mean', role: 'Input', note: 'Cross-calibrated multi-platform' },
-  { variable: 'θ(z) target', source: 'GLORYS12V1 reanalysis', native: '0.08° daily', harmonized: '0.25°, 15 depths', role: 'Train', note: 'doi:10.48670/moi-00021' },
-  { variable: 'Argo T(z)', source: 'INCOIS LAS / IFREMER', native: 'Irregular profiles', harmonized: 'Colocated hold-out', role: 'Validate', note: 'Never used in training' },
+  { variable: 'SST', source: 'GHRSST / OSTIA L4', native: '0.05° daily', harmonized: '0.25° daily', role: 'Input', note: 'Multi-sensor (SLSTR/VIIRS); DINEOF cloud inpainting' },
+  { variable: 'SSS', source: 'JPL SMAP L3 v5.0', native: '0.25° 8-day', harmonized: '0.25° daily', role: 'Input', note: 'RFI filtered; optimal interpolation with plume conservation' },
+  { variable: 'SSH / SLA', source: 'CMEMS DUACS Altimetry', native: '0.25° daily', harmonized: '0.25° daily', role: 'Input', note: 'Sentinel-3 & Jason-3 constellation; DAC corrected' },
+  { variable: 'Currents U, V', source: 'GlobCurrent / CMEMS', native: '0.25° daily', harmonized: '0.25° daily', role: 'Input', note: 'Geostrophic balance + wind-driven Ekman integration' },
+  { variable: 'Winds U, V', source: 'CCMP v3.0 / MetOp ASCAT', native: '0.25° 6-hourly', harmonized: '0.25° daily mean', role: 'Input', note: 'Cross-calibrated scatterometer wind stress (τx, τy)' },
+  { variable: 'θ(z) target', source: 'GLORYS12V1 reanalysis', native: '0.08° daily', harmonized: '0.25°, 15 depths', role: 'Train', note: 'Mercator Ocean physics; conservative temperature' },
+  { variable: 'Argo T(z)', source: 'INCOIS GDAC / IFREMER', native: 'Irregular profiles', harmonized: 'Colocated hold-out', role: 'Validate', note: 'QC flag = 1; strictly hold-out, never used in training' },
 ]
 
 export const DATASETS = [

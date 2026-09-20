@@ -306,6 +306,35 @@ const Map = forwardRef<MapRef, MapProps>(function Map(
 
     const styleLoadHandler = () => {
       styleSwapInFlightRef.current = false;
+      // Suppress/filter disputed border lines from third-party Carto basemap that cut through J&K
+      try {
+        if (map.getLayer("boundary_country_inner")) {
+          map.setFilter("boundary_country_inner", [
+            "all",
+            ["==", "admin_level", 2],
+            ["==", "maritime", 0],
+            ["!=", "disputed", 1],
+          ]);
+        }
+        if (map.getLayer("boundary_country_outline")) {
+          map.setFilter("boundary_country_outline", [
+            "all",
+            ["==", "admin_level", 2],
+            ["==", "maritime", 0],
+            ["!=", "disputed", 1],
+          ]);
+        }
+        if (map.getLayer("boundary_state")) {
+          map.setFilter("boundary_state", [
+            "all",
+            ["==", "admin_level", 4],
+            ["==", "maritime", 0],
+            ["!=", "disputed", 1],
+          ]);
+        }
+      } catch {
+        // ignore if layers are not present in style
+      }
       setIsStyleLoaded(true);
     };
     const loadHandler = () => setIsLoaded(true);

@@ -31,6 +31,9 @@ yarn-error.log*
 pnpm-debug.log*
 .DS_Store
 
+# Netlify CLI link state (never commit)
+.netlify/
+
 # Editor
 .vscode/*
 !.vscode/extensions.json

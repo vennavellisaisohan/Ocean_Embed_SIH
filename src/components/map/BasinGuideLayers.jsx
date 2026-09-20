@@ -2,6 +2,7 @@ import { useMemo } from 'react'
 import { MapGeoJSON, MapMarker, MarkerContent, MarkerPopup } from '@/components/ui/map'
 import { REAL_ARGO_FLOATS } from '../../lib/realOceanData'
 import { exampleCellGeoJSON, nioFrameGridGeoJSON } from '../../lib/nioField'
+import IndiaBoundaryLayers from './IndiaBoundaryLayers'
 
 export default function BasinGuideLayers({ showObs = true, showExample = true, onPin }) {
   const grid = useMemo(() => nioFrameGridGeoJSON(0.25), [])
@@ -9,6 +10,9 @@ export default function BasinGuideLayers({ showObs = true, showExample = true, o
 
   return (
     <>
+      {/* Official Survey of India (SOI) Complete Boundary & Line of Control (LoC) */}
+      <IndiaBoundaryLayers />
+
       <MapGeoJSON
         data={grid}
         fillPaint={false}
@@ -61,7 +65,7 @@ export function BasinGuideLegend() {
     <div className="basin-legend" aria-label="Grid and observations">
       <div><i className="swatch cell" /> 0.25° × 0.25° grid cell</div>
       <div><i className="swatch obs" /> Observation point (Argo)</div>
-      <div className="note">Green = live Argo (Aug–Sep 2026). Color field = trained OceanUNet on 2024-08-29. Not mock.</div>
+      <div className="note">Survey of India sovereign boundary (incl. complete J&K, Ladakh & PoK).</div>
     </div>
   )
 }

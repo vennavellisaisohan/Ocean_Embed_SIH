@@ -11,6 +11,7 @@ import {
 } from '../../lib/nioField'
 import { CutPanel } from './VizPanels'
 import OceanMapPanel from './OceanMapPanel'
+import RasterColorKeyPanel from './RasterColorKeyPanel'
 
 const DEFAULT = { lat: 15.24, lon: 68.51 }
 const VIEWS = [
@@ -112,6 +113,7 @@ export default function PocSection() {
             onPin={setPin}
             meta={meta}
             thetaAtDepth={thetaAtDepth}
+            surface={surface}
           />
         )}
 
@@ -149,38 +151,83 @@ export default function PocSection() {
             </div>
           </div>
           <div className="panel-card">
-            <h3>Inputs at pin</h3>
-            <p className="poc-pin">
+            <div className="flex items-center justify-between gap-2">
+              <h3>64-D Neural Latent Vector (z)</h3>
+              <span className="text-[10px] font-mono text-[#c4a574] px-1.5 py-0.5 rounded border border-[#c4a574]/30">
+                z₁..z₆₄
+              </span>
+            </div>
+            <p className="poc-pin" style={{ marginBottom: 8 }}>
               Wind {Number.isFinite(surface.wind) ? surface.wind.toFixed(1) : '—'} m/s · currents {Number.isFinite(surface.speed) ? surface.speed.toFixed(2) : '—'} m/s · TCHP {Number.isFinite(surface.tchp) ? surface.tchp.toFixed(0) : '—'} kJ/cm²
             </p>
-            <div className="embed-grid" aria-hidden="true">
+            <p className="text-[11px] text-muted-foreground mb-3 leading-relaxed">
+              Learned bottleneck representation encoding subsurface pycnocline stability, thermal buoyancy, and eddy vorticity.
+            </p>
+            <div className="embed-grid" role="grid" aria-label="64-channel neural latent matrix">
               {Array.from(latent).map((z, i) => {
                 const t = (z + 1) / 2
                 const r = Math.round(33 + t * 163)
                 const g = Math.round(79 + t * 53)
                 const b = Math.round(74 - t * 36)
-                return <i key={i} style={{ background: `rgb(${r},${g},${b})` }} />
+                return (
+                  <i
+                    key={i}
+                    title={`Channel z[${i + 1}]: ${z.toFixed(3)} (${z > 0 ? 'Warm/Buoyant' : 'Cold/Dense'})`}
+                    style={{ background: `rgb(${r},${g},${b})` }}
+                  />
+                )
               })}
             </div>
+            <div className="flex items-center justify-between pt-2.5 text-[10px] font-mono text-muted-foreground border-t border-border/40 mt-3">
+              <span className="flex items-center gap-1.5">
+                <i className="w-2.5 h-2.5 rounded-sm inline-block" style={{ background: 'rgb(33,79,74)' }} />
+                Negative / Cold anomaly (-1.0)
+              </span>
+              <span className="flex items-center gap-1.5">
+                <i className="w-2.5 h-2.5 rounded-sm inline-block" style={{ background: 'rgb(196,132,38)' }} />
+                Positive / Warm activation (+1.0)
+              </span>
+            </div>
           </div>
-          <div className="panel-card">
-            <h3>Reconstructed profile</h3>
-            <ResponsiveContainer width="100%" height={190}>
-              <LineChart data={profile} layout="vertical" margin={{ top: 4, right: 10, bottom: 0, left: 0 }}>
-                <CartesianGrid strokeDasharray="3 3" stroke="rgba(239,232,220,0.08)" />
-                <XAxis type="number" domain={[4, 32]} tick={{ fill: 'rgba(239,232,220,0.45)', fontSize: 10, fontFamily: 'IBM Plex Mono' }} unit="°C" />
-                <YAxis type="number" dataKey="depth" domain={[1000, 0]} tick={{ fill: 'rgba(239,232,220,0.45)', fontSize: 10, fontFamily: 'IBM Plex Mono' }} unit="m" />
-                <Tooltip
-                  content={({ active, payload }) => {
-                    if (!active || !payload?.length) return null
-                    const d = payload[0].payload
-                    return <div className="tip dark">{d.depth} m · {d.predicted.toFixed(2)} °C</div>
-                  }}
-                />
-                <ReferenceLine y={depth} stroke="#c4a574" />
-                <Line type="monotone" dataKey="predicted" stroke="#d7c4a3" strokeWidth={2} dot={false} />
-              </LineChart>
-            </ResponsiveContainer>
+
+          {/* RIGHT SIDE: The Basin Raster Drop Card filling the empty space on the right */}
+          <div className="poc-drop-card-wrap">
+            <RasterColorKeyPanel
+              layerId={layer}
+              depth={depth}
+              pin={pin}
+              thetaAtDepth={thetaAtDepth}
+              surface={surface}
+              meta={meta}
+            />
+          </div>
+
+          {/* Reconstructed Profile Chart */}
+          <div className="panel-card" style={{ gridColumn: '1 / -1', marginTop: 4 }}>
+            <div className="flex items-center justify-between gap-2 mb-2">
+              <h3 style={{ margin: 0 }}>Reconstructed profile at pin · {pin.lat.toFixed(2)}°N {pin.lon.toFixed(2)}°E</h3>
+              <span className="text-[11px] font-mono text-[#c4a574]">
+                θ({depth} m): {thetaAtDepth?.toFixed(2) ?? '—'} °C
+              </span>
+            </div>
+            <div style={{ width: '100%', height: 210 }}>
+              <ResponsiveContainer width="100%" height={210}>
+                <LineChart data={profile} layout="vertical" margin={{ top: 4, right: 14, bottom: 4, left: 4 }}>
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(239,232,220,0.08)" />
+                  <XAxis type="number" domain={[4, 32]} tick={{ fill: 'rgba(239,232,220,0.45)', fontSize: 10, fontFamily: 'IBM Plex Mono' }} unit="°C" />
+                  <YAxis type="number" dataKey="depth" domain={[1000, 0]} tick={{ fill: 'rgba(239,232,220,0.45)', fontSize: 10, fontFamily: 'IBM Plex Mono' }} unit="m" />
+                  <Tooltip
+                    content={({ active, payload }) => {
+                      if (!active || !payload?.length) return null
+                      const d = payload[0].payload
+                      return <div className="tip dark">{d.depth} m · {d.predicted.toFixed(2)} °C</div>
+                    }}
+                  />
+                  <ReferenceLine y={depth} stroke="#c4a574" strokeWidth={1.5} />
+                  <Line type="monotone" dataKey="predicted" stroke="#d7c4a3" strokeWidth={2.2} dot={{ r: 2.5, fill: '#d7c4a3' }} />
+                </LineChart>
+              </ResponsiveContainer>
+            </div>
           </div>
         </div>
 

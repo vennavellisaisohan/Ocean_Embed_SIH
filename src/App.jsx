@@ -9,7 +9,6 @@ import PocSection from './components/sections/PocSection'
 import ExplorerSection from './components/sections/ExplorerSection'
 import ValidationSection from './components/sections/ValidationSection'
 import ExperimentsSection from './components/sections/ExperimentsSection'
-import CycloneWarningSection from './components/sections/CycloneWarningSection'
 import ImpactSection from './components/sections/ImpactSection'
 import FooterSection from './components/sections/FooterSection'
 import { setLenis, scrollToId } from './lib/scroll'
@@ -143,7 +142,6 @@ export default function App() {
         </ErrorBoundary>
       </div>
       <div id="validation"><ValidationSection /></div>
-      <div id="cyclones"><CycloneWarningSection /></div>
       <div id="experiments"><ExperimentsSection /></div>
       <div id="impact"><ImpactSection /></div>
       <FooterSection />
